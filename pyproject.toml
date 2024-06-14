@@ -29,6 +29,8 @@ classifiers = [
 dependencies = [
 ]
 
+[tool.cyright]
+
 [project.urls]
 Homepage = "https://github.com/Puiching-Memory/pylibde265"
 Issues = "https://github.com/Puiching-Memory/pylibde265/issues"

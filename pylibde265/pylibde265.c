@@ -1517,11 +1517,11 @@ static const char *__pyx_f[] = {
 struct __pyx_obj_10pylibde265_pylibde265_decoder;
 struct __pyx_obj_10pylibde265___pyx_scope_struct__decode;
 
-/* "pylibde265.pyx":26
+/* "pylibde265.pyx":27
  * 
  * 
  * cdef class pylibde265_decoder(object):             # <<<<<<<<<<<<<<
- *     cdef de265_decoder_context* ctx
+ *     cdef pylibde265.de265_decoder_context* ctx
  * 
  */
 struct __pyx_obj_10pylibde265_pylibde265_decoder {
@@ -1530,7 +1530,7 @@ struct __pyx_obj_10pylibde265_pylibde265_decoder {
 };
 
 
-/* "pylibde265.pyx":122
+/* "pylibde265.pyx":123
  *         return None
  * 
  *     def decode(self):             # <<<<<<<<<<<<<<
@@ -3123,7 +3123,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_codeobj__17 __pyx_mstate_global->__pyx_codeobj__17
 /* #### Code section: module_code ### */
 
-/* "pylibde265.pyx":15
+/* "pylibde265.pyx":16
  * import time
  * 
  * def get_version()->None:             # <<<<<<<<<<<<<<
@@ -3158,7 +3158,7 @@ static PyObject *__pyx_pf_10pylibde265_get_version(CYTHON_UNUSED PyObject *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_version", 1);
 
-  /* "pylibde265.pyx":16
+  /* "pylibde265.pyx":17
  * 
  * def get_version()->None:
  *     return pylibde265.de265_get_version().decode('ascii')             # <<<<<<<<<<<<<<
@@ -3167,15 +3167,15 @@ static PyObject *__pyx_pf_10pylibde265_get_version(CYTHON_UNUSED PyObject *__pyx
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = de265_get_version();
-  __pyx_t_2 = __Pyx_ssize_strlen(__pyx_t_1); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 16, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_decode_c_string(__pyx_t_1, 0, __pyx_t_2, NULL, NULL, PyUnicode_DecodeASCII); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ssize_strlen(__pyx_t_1); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_decode_c_string(__pyx_t_1, 0, __pyx_t_2, NULL, NULL, PyUnicode_DecodeASCII); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "pylibde265.pyx":15
+  /* "pylibde265.pyx":16
  * import time
  * 
  * def get_version()->None:             # <<<<<<<<<<<<<<
@@ -3194,8 +3194,8 @@ static PyObject *__pyx_pf_10pylibde265_get_version(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "pylibde265.pyx":29
- *     cdef de265_decoder_context* ctx
+/* "pylibde265.pyx":30
+ *     cdef pylibde265.de265_decoder_context* ctx
  * 
  *     def __cinit__(self,threads:int):             # <<<<<<<<<<<<<<
  *         self.ctx = pylibde265.de265_new_decoder()
@@ -3238,12 +3238,12 @@ static int __pyx_pw_10pylibde265_18pylibde265_decoder_1__cinit__(PyObject *__pyx
           (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 29, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 30, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 29, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__cinit__") < 0)) __PYX_ERR(0, 30, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -3254,7 +3254,7 @@ static int __pyx_pw_10pylibde265_18pylibde265_decoder_1__cinit__(PyObject *__pyx
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 29, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 30, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3268,7 +3268,7 @@ static int __pyx_pw_10pylibde265_18pylibde265_decoder_1__cinit__(PyObject *__pyx
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_threads), (&PyInt_Type), 0, "threads", 1))) __PYX_ERR(0, 29, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_threads), (&PyInt_Type), 0, "threads", 1))) __PYX_ERR(0, 30, __pyx_L1_error)
   __pyx_r = __pyx_pf_10pylibde265_18pylibde265_decoder___cinit__(((struct __pyx_obj_10pylibde265_pylibde265_decoder *)__pyx_v_self), __pyx_v_threads);
 
   /* function exit code */
@@ -3293,7 +3293,7 @@ static int __pyx_pf_10pylibde265_18pylibde265_decoder___cinit__(struct __pyx_obj
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
 
-  /* "pylibde265.pyx":30
+  /* "pylibde265.pyx":31
  * 
  *     def __cinit__(self,threads:int):
  *         self.ctx = pylibde265.de265_new_decoder()             # <<<<<<<<<<<<<<
@@ -3302,17 +3302,17 @@ static int __pyx_pf_10pylibde265_18pylibde265_decoder___cinit__(struct __pyx_obj
  */
   __pyx_v_self->ctx = de265_new_decoder();
 
-  /* "pylibde265.pyx":31
+  /* "pylibde265.pyx":32
  *     def __cinit__(self,threads:int):
  *         self.ctx = pylibde265.de265_new_decoder()
  *         pylibde265.de265_start_worker_threads(self.ctx,threads)             # <<<<<<<<<<<<<<
  * 
  *         pylibde265.de265_set_parameter_bool(self.ctx,pylibde265.de265_param.DE265_DECODER_PARAM_DISABLE_DEBLOCKING,0)
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_threads); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_threads); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 32, __pyx_L1_error)
   (void)(de265_start_worker_threads(__pyx_v_self->ctx, __pyx_t_1));
 
-  /* "pylibde265.pyx":33
+  /* "pylibde265.pyx":34
  *         pylibde265.de265_start_worker_threads(self.ctx,threads)
  * 
  *         pylibde265.de265_set_parameter_bool(self.ctx,pylibde265.de265_param.DE265_DECODER_PARAM_DISABLE_DEBLOCKING,0)             # <<<<<<<<<<<<<<
@@ -3321,7 +3321,7 @@ static int __pyx_pf_10pylibde265_18pylibde265_decoder___cinit__(struct __pyx_obj
  */
   de265_set_parameter_bool(__pyx_v_self->ctx, DE265_DECODER_PARAM_DISABLE_DEBLOCKING, 0);
 
-  /* "pylibde265.pyx":34
+  /* "pylibde265.pyx":35
  * 
  *         pylibde265.de265_set_parameter_bool(self.ctx,pylibde265.de265_param.DE265_DECODER_PARAM_DISABLE_DEBLOCKING,0)
  *         pylibde265.de265_set_parameter_bool(self.ctx,pylibde265.de265_param.DE265_DECODER_PARAM_DISABLE_SAO,0)             # <<<<<<<<<<<<<<
@@ -3330,8 +3330,8 @@ static int __pyx_pf_10pylibde265_18pylibde265_decoder___cinit__(struct __pyx_obj
  */
   de265_set_parameter_bool(__pyx_v_self->ctx, DE265_DECODER_PARAM_DISABLE_SAO, 0);
 
-  /* "pylibde265.pyx":29
- *     cdef de265_decoder_context* ctx
+  /* "pylibde265.pyx":30
+ *     cdef pylibde265.de265_decoder_context* ctx
  * 
  *     def __cinit__(self,threads:int):             # <<<<<<<<<<<<<<
  *         self.ctx = pylibde265.de265_new_decoder()
@@ -3348,7 +3348,7 @@ static int __pyx_pf_10pylibde265_18pylibde265_decoder___cinit__(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "pylibde265.pyx":37
+/* "pylibde265.pyx":38
  * 
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -3380,16 +3380,16 @@ static void __pyx_pf_10pylibde265_18pylibde265_decoder_2__dealloc__(struct __pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__dealloc__", 1);
 
-  /* "pylibde265.pyx":38
+  /* "pylibde265.pyx":39
  * 
  *     def __dealloc__(self):
  *         logger.debug("pylibde265:clean...")             # <<<<<<<<<<<<<<
  *         pylibde265.de265_free_decoder(self.ctx)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_logger); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_logger); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_debug); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_debug); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -3410,13 +3410,13 @@ static void __pyx_pf_10pylibde265_18pylibde265_decoder_2__dealloc__(struct __pyx
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_kp_u_pylibde265_clean};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "pylibde265.pyx":39
+  /* "pylibde265.pyx":40
  *     def __dealloc__(self):
  *         logger.debug("pylibde265:clean...")
  *         pylibde265.de265_free_decoder(self.ctx)             # <<<<<<<<<<<<<<
@@ -3425,7 +3425,7 @@ static void __pyx_pf_10pylibde265_18pylibde265_decoder_2__dealloc__(struct __pyx
  */
   (void)(de265_free_decoder(__pyx_v_self->ctx));
 
-  /* "pylibde265.pyx":37
+  /* "pylibde265.pyx":38
  * 
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -3444,7 +3444,7 @@ static void __pyx_pf_10pylibde265_18pylibde265_decoder_2__dealloc__(struct __pyx
   __Pyx_RefNannyFinishContext();
 }
 
-/* "pylibde265.pyx":42
+/* "pylibde265.pyx":43
  * 
  * 
  *     def load(self,data):             # <<<<<<<<<<<<<<
@@ -3505,12 +3505,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 42, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 43, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "load") < 0)) __PYX_ERR(0, 42, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "load") < 0)) __PYX_ERR(0, 43, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -3521,7 +3521,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("load", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 42, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("load", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 43, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3568,29 +3568,29 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_4load(struct __pyx_o
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("load", 1);
 
-  /* "pylibde265.pyx":43
+  /* "pylibde265.pyx":44
  * 
  *     def load(self,data):
  *         buffer = bytearray(102400)             # <<<<<<<<<<<<<<
  *         cdef char* ba = buffer
  *         cdef int user_data = 0
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&PyByteArray_Type)), __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&PyByteArray_Type)), __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_buffer = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "pylibde265.pyx":44
+  /* "pylibde265.pyx":45
  *     def load(self,data):
  *         buffer = bytearray(102400)
  *         cdef char* ba = buffer             # <<<<<<<<<<<<<<
  *         cdef int user_data = 0
  *         cdef int pts = 0
  */
-  __pyx_t_2 = __Pyx_PyObject_AsWritableString(__pyx_v_buffer); if (unlikely((!__pyx_t_2) && PyErr_Occurred())) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_AsWritableString(__pyx_v_buffer); if (unlikely((!__pyx_t_2) && PyErr_Occurred())) __PYX_ERR(0, 45, __pyx_L1_error)
   __pyx_v_ba = __pyx_t_2;
 
-  /* "pylibde265.pyx":45
+  /* "pylibde265.pyx":46
  *         buffer = bytearray(102400)
  *         cdef char* ba = buffer
  *         cdef int user_data = 0             # <<<<<<<<<<<<<<
@@ -3599,7 +3599,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_4load(struct __pyx_o
  */
   __pyx_v_user_data = 0;
 
-  /* "pylibde265.pyx":46
+  /* "pylibde265.pyx":47
  *         cdef char* ba = buffer
  *         cdef int user_data = 0
  *         cdef int pts = 0             # <<<<<<<<<<<<<<
@@ -3608,14 +3608,14 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_4load(struct __pyx_o
  */
   __pyx_v_pts = 0;
 
-  /* "pylibde265.pyx":47
+  /* "pylibde265.pyx":48
  *         cdef int user_data = 0
  *         cdef int pts = 0
  *         bytes_read = data.readinto(buffer)             # <<<<<<<<<<<<<<
  * 
  *         while bytes_read > 0:
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_data, __pyx_n_s_readinto); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_data, __pyx_n_s_readinto); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   __pyx_t_5 = 0;
@@ -3635,14 +3635,14 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_4load(struct __pyx_o
     PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_v_buffer};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_bytes_read = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "pylibde265.pyx":49
+  /* "pylibde265.pyx":50
  *         bytes_read = data.readinto(buffer)
  * 
  *         while bytes_read > 0:             # <<<<<<<<<<<<<<
@@ -3650,45 +3650,45 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_4load(struct __pyx_o
  *             #logger.debug([dec_error,bytes_read])
  */
   while (1) {
-    __pyx_t_1 = PyObject_RichCompare(__pyx_v_bytes_read, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 49, __pyx_L1_error)
+    __pyx_t_1 = PyObject_RichCompare(__pyx_v_bytes_read, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (!__pyx_t_6) break;
 
-    /* "pylibde265.pyx":50
+    /* "pylibde265.pyx":51
  * 
  *         while bytes_read > 0:
  *             dec_error = pylibde265.de265_push_data(self.ctx, ba, bytes_read, pts, &user_data)             # <<<<<<<<<<<<<<
  *             #logger.debug([dec_error,bytes_read])
  *             pts += bytes_read
  */
-    __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_v_bytes_read); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_v_bytes_read); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 51, __pyx_L1_error)
     __pyx_v_dec_error = de265_push_data(__pyx_v_self->ctx, __pyx_v_ba, __pyx_t_5, __pyx_v_pts, (&__pyx_v_user_data));
 
-    /* "pylibde265.pyx":52
+    /* "pylibde265.pyx":53
  *             dec_error = pylibde265.de265_push_data(self.ctx, ba, bytes_read, pts, &user_data)
  *             #logger.debug([dec_error,bytes_read])
  *             pts += bytes_read             # <<<<<<<<<<<<<<
  *             bytes_read = data.readinto(buffer)
  * 
  */
-    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_pts); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_pts); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = PyNumber_InPlaceAdd(__pyx_t_1, __pyx_v_bytes_read); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_InPlaceAdd(__pyx_t_1, __pyx_v_bytes_read); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_v_pts = __pyx_t_5;
 
-    /* "pylibde265.pyx":53
+    /* "pylibde265.pyx":54
  *             #logger.debug([dec_error,bytes_read])
  *             pts += bytes_read
  *             bytes_read = data.readinto(buffer)             # <<<<<<<<<<<<<<
  * 
  *         dec_error = pylibde265.de265_flush_data(self.ctx)
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_data, __pyx_n_s_readinto); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_data, __pyx_n_s_readinto); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -3708,7 +3708,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_4load(struct __pyx_o
       PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_v_buffer};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     }
@@ -3716,7 +3716,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_4load(struct __pyx_o
     __pyx_t_3 = 0;
   }
 
-  /* "pylibde265.pyx":55
+  /* "pylibde265.pyx":56
  *             bytes_read = data.readinto(buffer)
  * 
  *         dec_error = pylibde265.de265_flush_data(self.ctx)             # <<<<<<<<<<<<<<
@@ -3725,7 +3725,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_4load(struct __pyx_o
  */
   __pyx_v_dec_error = de265_flush_data(__pyx_v_self->ctx);
 
-  /* "pylibde265.pyx":56
+  /* "pylibde265.pyx":57
  * 
  *         dec_error = pylibde265.de265_flush_data(self.ctx)
  *         return dec_error             # <<<<<<<<<<<<<<
@@ -3733,13 +3733,13 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_4load(struct __pyx_o
  *     def decode_frame(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyInt_From_de265_error(__pyx_v_dec_error); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_de265_error(__pyx_v_dec_error); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "pylibde265.pyx":42
+  /* "pylibde265.pyx":43
  * 
  * 
  *     def load(self,data):             # <<<<<<<<<<<<<<
@@ -3762,7 +3762,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_4load(struct __pyx_o
   return __pyx_r;
 }
 
-/* "pylibde265.pyx":58
+/* "pylibde265.pyx":59
  *         return dec_error
  * 
  *     def decode_frame(self):             # <<<<<<<<<<<<<<
@@ -3849,7 +3849,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("decode_frame", 1);
 
-  /* "pylibde265.pyx":60
+  /* "pylibde265.pyx":61
  *     def decode_frame(self):
  * 
  *         cdef int more = 1             # <<<<<<<<<<<<<<
@@ -3858,7 +3858,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
   __pyx_v_more = 1;
 
-  /* "pylibde265.pyx":61
+  /* "pylibde265.pyx":62
  * 
  *         cdef int more = 1
  *         cdef const uint8_t* bufferY = <uint8_t *>0             # <<<<<<<<<<<<<<
@@ -3867,7 +3867,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
   __pyx_v_bufferY = ((uint8_t *)0);
 
-  /* "pylibde265.pyx":62
+  /* "pylibde265.pyx":63
  *         cdef int more = 1
  *         cdef const uint8_t* bufferY = <uint8_t *>0
  *         cdef const uint8_t* bufferCb = <uint8_t *>0             # <<<<<<<<<<<<<<
@@ -3876,7 +3876,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
   __pyx_v_bufferCb = ((uint8_t *)0);
 
-  /* "pylibde265.pyx":63
+  /* "pylibde265.pyx":64
  *         cdef const uint8_t* bufferY = <uint8_t *>0
  *         cdef const uint8_t* bufferCb = <uint8_t *>0
  *         cdef const uint8_t* bufferCr = <uint8_t *>0             # <<<<<<<<<<<<<<
@@ -3885,7 +3885,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
   __pyx_v_bufferCr = ((uint8_t *)0);
 
-  /* "pylibde265.pyx":64
+  /* "pylibde265.pyx":65
  *         cdef const uint8_t* bufferCb = <uint8_t *>0
  *         cdef const uint8_t* bufferCr = <uint8_t *>0
  *         cdef int outstride = 0             # <<<<<<<<<<<<<<
@@ -3894,7 +3894,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
   __pyx_v_outstride = 0;
 
-  /* "pylibde265.pyx":66
+  /* "pylibde265.pyx":67
  *         cdef int outstride = 0
  * 
  *         while more > 0:             # <<<<<<<<<<<<<<
@@ -3905,16 +3905,16 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
     __pyx_t_1 = (__pyx_v_more > 0);
     if (!__pyx_t_1) break;
 
-    /* "pylibde265.pyx":67
+    /* "pylibde265.pyx":68
  * 
  *         while more > 0:
  *             start_t = time.time()             # <<<<<<<<<<<<<<
  *             more = 0
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 67, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 68, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = NULL;
@@ -3935,14 +3935,14 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
     __Pyx_XDECREF_SET(__pyx_v_start_t, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "pylibde265.pyx":68
+    /* "pylibde265.pyx":69
  *         while more > 0:
  *             start_t = time.time()
  *             more = 0             # <<<<<<<<<<<<<<
@@ -3951,7 +3951,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
     __pyx_v_more = 0;
 
-    /* "pylibde265.pyx":70
+    /* "pylibde265.pyx":71
  *             more = 0
  * 
  *             with nogil:             # <<<<<<<<<<<<<<
@@ -3967,7 +3967,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
         #endif
         /*try:*/ {
 
-          /* "pylibde265.pyx":71
+          /* "pylibde265.pyx":72
  * 
  *             with nogil:
  *                 dec_error = pylibde265.de265_decode(self.ctx, &more)             # <<<<<<<<<<<<<<
@@ -3976,7 +3976,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
           __pyx_v_dec_error = de265_decode(__pyx_v_self->ctx, (&__pyx_v_more));
 
-          /* "pylibde265.pyx":73
+          /* "pylibde265.pyx":74
  *                 dec_error = pylibde265.de265_decode(self.ctx, &more)
  *                 #logger.debug(f'decode:{dec_error},more?{more}')
  *                 image_ptr = pylibde265.de265_get_next_picture(self.ctx)             # <<<<<<<<<<<<<<
@@ -3985,7 +3985,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
           __pyx_v_image_ptr = de265_get_next_picture(__pyx_v_self->ctx);
 
-          /* "pylibde265.pyx":75
+          /* "pylibde265.pyx":76
  *                 image_ptr = pylibde265.de265_get_next_picture(self.ctx)
  * 
  *                 if image_ptr == NULL:             # <<<<<<<<<<<<<<
@@ -3995,7 +3995,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
           __pyx_t_1 = (__pyx_v_image_ptr == NULL);
           if (__pyx_t_1) {
 
-            /* "pylibde265.pyx":77
+            /* "pylibde265.pyx":78
  *                 if image_ptr == NULL:
  *                     #logger.debug("Image pointer is null -> not yielding any image")
  *                     continue             # <<<<<<<<<<<<<<
@@ -4004,7 +4004,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
             goto __pyx_L5_continue;
 
-            /* "pylibde265.pyx":75
+            /* "pylibde265.pyx":76
  *                 image_ptr = pylibde265.de265_get_next_picture(self.ctx)
  * 
  *                 if image_ptr == NULL:             # <<<<<<<<<<<<<<
@@ -4014,7 +4014,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
           }
         }
 
-        /* "pylibde265.pyx":70
+        /* "pylibde265.pyx":71
  *             more = 0
  * 
  *             with nogil:             # <<<<<<<<<<<<<<
@@ -4040,16 +4040,16 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
         }
     }
 
-    /* "pylibde265.pyx":79
+    /* "pylibde265.pyx":80
  *                     continue
  * 
  *             print(time.time()-start_t)             # <<<<<<<<<<<<<<
  *             #logger.debug('get image')
  *             w = pylibde265.de265_get_image_width(image_ptr,0)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_time); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_4 = NULL;
@@ -4070,43 +4070,43 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 79, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
-    __pyx_t_3 = PyNumber_Subtract(__pyx_t_2, __pyx_v_start_t); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Subtract(__pyx_t_2, __pyx_v_start_t); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "pylibde265.pyx":81
+    /* "pylibde265.pyx":82
  *             print(time.time()-start_t)
  *             #logger.debug('get image')
  *             w = pylibde265.de265_get_image_width(image_ptr,0)             # <<<<<<<<<<<<<<
  *             h = pylibde265.de265_get_image_height(image_ptr,0)
  *             chroma = pylibde265.de265_get_chroma_format(image_ptr)
  */
-    __pyx_t_2 = __Pyx_PyInt_From_int(de265_get_image_width(__pyx_v_image_ptr, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 81, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_int(de265_get_image_width(__pyx_v_image_ptr, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_v_w = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "pylibde265.pyx":82
+    /* "pylibde265.pyx":83
  *             #logger.debug('get image')
  *             w = pylibde265.de265_get_image_width(image_ptr,0)
  *             h = pylibde265.de265_get_image_height(image_ptr,0)             # <<<<<<<<<<<<<<
  *             chroma = pylibde265.de265_get_chroma_format(image_ptr)
  *             bps = pylibde265.de265_get_bits_per_pixel(image_ptr,0)
  */
-    __pyx_t_2 = __Pyx_PyInt_From_int(de265_get_image_height(__pyx_v_image_ptr, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_int(de265_get_image_height(__pyx_v_image_ptr, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 83, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_v_h = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "pylibde265.pyx":83
+    /* "pylibde265.pyx":84
  *             w = pylibde265.de265_get_image_width(image_ptr,0)
  *             h = pylibde265.de265_get_image_height(image_ptr,0)
  *             chroma = pylibde265.de265_get_chroma_format(image_ptr)             # <<<<<<<<<<<<<<
@@ -4115,7 +4115,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
     __pyx_v_chroma = de265_get_chroma_format(__pyx_v_image_ptr);
 
-    /* "pylibde265.pyx":84
+    /* "pylibde265.pyx":85
  *             h = pylibde265.de265_get_image_height(image_ptr,0)
  *             chroma = pylibde265.de265_get_chroma_format(image_ptr)
  *             bps = pylibde265.de265_get_bits_per_pixel(image_ptr,0)             # <<<<<<<<<<<<<<
@@ -4124,7 +4124,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
     __pyx_v_bps = de265_get_bits_per_pixel(__pyx_v_image_ptr, 0);
 
-    /* "pylibde265.pyx":85
+    /* "pylibde265.pyx":86
  *             chroma = pylibde265.de265_get_chroma_format(image_ptr)
  *             bps = pylibde265.de265_get_bits_per_pixel(image_ptr,0)
  *             pts = pylibde265.de265_get_image_PTS(image_ptr)             # <<<<<<<<<<<<<<
@@ -4133,7 +4133,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
     __pyx_v_pts = de265_get_image_PTS(__pyx_v_image_ptr);
 
-    /* "pylibde265.pyx":86
+    /* "pylibde265.pyx":87
  *             bps = pylibde265.de265_get_bits_per_pixel(image_ptr,0)
  *             pts = pylibde265.de265_get_image_PTS(image_ptr)
  *             ttd_max = pylibde265.de265_get_highest_TID(self.ctx)             # <<<<<<<<<<<<<<
@@ -4142,7 +4142,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
     __pyx_v_ttd_max = de265_get_highest_TID(__pyx_v_self->ctx);
 
-    /* "pylibde265.pyx":87
+    /* "pylibde265.pyx":88
  *             pts = pylibde265.de265_get_image_PTS(image_ptr)
  *             ttd_max = pylibde265.de265_get_highest_TID(self.ctx)
  *             ttd =  pylibde265.de265_get_current_TID(self.ctx)             # <<<<<<<<<<<<<<
@@ -4151,7 +4151,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
     __pyx_v_ttd = de265_get_current_TID(__pyx_v_self->ctx);
 
-    /* "pylibde265.pyx":90
+    /* "pylibde265.pyx":91
  *             #print(w,h,chroma,bps,pts)
  * 
  *             if chroma == 1: #4:2:0             # <<<<<<<<<<<<<<
@@ -4161,31 +4161,31 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
     switch (__pyx_v_chroma) {
       case 1:
 
-      /* "pylibde265.pyx":91
+      /* "pylibde265.pyx":92
  * 
  *             if chroma == 1: #4:2:0
  *                 wC = w // 2             # <<<<<<<<<<<<<<
  *                 hC = h // 2
  *             elif chroma == 2:#4:2:2
  */
-      __pyx_t_2 = __Pyx_PyInt_FloorDivideObjC(__pyx_v_w, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyInt_FloorDivideObjC(__pyx_v_w, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 92, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __pyx_v_wC = __pyx_t_2;
       __pyx_t_2 = 0;
 
-      /* "pylibde265.pyx":92
+      /* "pylibde265.pyx":93
  *             if chroma == 1: #4:2:0
  *                 wC = w // 2
  *                 hC = h // 2             # <<<<<<<<<<<<<<
  *             elif chroma == 2:#4:2:2
  *                 wC = w // 2
  */
-      __pyx_t_2 = __Pyx_PyInt_FloorDivideObjC(__pyx_v_h, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 92, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyInt_FloorDivideObjC(__pyx_v_h, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 93, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __pyx_v_hC = __pyx_t_2;
       __pyx_t_2 = 0;
 
-      /* "pylibde265.pyx":90
+      /* "pylibde265.pyx":91
  *             #print(w,h,chroma,bps,pts)
  * 
  *             if chroma == 1: #4:2:0             # <<<<<<<<<<<<<<
@@ -4195,19 +4195,19 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       break;
       case 2:
 
-      /* "pylibde265.pyx":94
+      /* "pylibde265.pyx":95
  *                 hC = h // 2
  *             elif chroma == 2:#4:2:2
  *                 wC = w // 2             # <<<<<<<<<<<<<<
  *                 hC = h
  *             elif chroma == 3: #4:4:4
  */
-      __pyx_t_2 = __Pyx_PyInt_FloorDivideObjC(__pyx_v_w, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyInt_FloorDivideObjC(__pyx_v_w, __pyx_int_2, 2, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __pyx_v_wC = __pyx_t_2;
       __pyx_t_2 = 0;
 
-      /* "pylibde265.pyx":95
+      /* "pylibde265.pyx":96
  *             elif chroma == 2:#4:2:2
  *                 wC = w // 2
  *                 hC = h             # <<<<<<<<<<<<<<
@@ -4217,7 +4217,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       __Pyx_INCREF(__pyx_v_h);
       __pyx_v_hC = __pyx_v_h;
 
-      /* "pylibde265.pyx":93
+      /* "pylibde265.pyx":94
  *                 wC = w // 2
  *                 hC = h // 2
  *             elif chroma == 2:#4:2:2             # <<<<<<<<<<<<<<
@@ -4227,7 +4227,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       break;
       case 3:
 
-      /* "pylibde265.pyx":97
+      /* "pylibde265.pyx":98
  *                 hC = h
  *             elif chroma == 3: #4:4:4
  *                 wC = w             # <<<<<<<<<<<<<<
@@ -4237,7 +4237,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       __Pyx_INCREF(__pyx_v_w);
       __pyx_v_wC = __pyx_v_w;
 
-      /* "pylibde265.pyx":98
+      /* "pylibde265.pyx":99
  *             elif chroma == 3: #4:4:4
  *                 wC = w
  *                 hC = h             # <<<<<<<<<<<<<<
@@ -4247,7 +4247,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       __Pyx_INCREF(__pyx_v_h);
       __pyx_v_hC = __pyx_v_h;
 
-      /* "pylibde265.pyx":96
+      /* "pylibde265.pyx":97
  *                 wC = w // 2
  *                 hC = h
  *             elif chroma == 3: #4:4:4             # <<<<<<<<<<<<<<
@@ -4257,21 +4257,21 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       break;
       default:
 
-      /* "pylibde265.pyx":100
+      /* "pylibde265.pyx":101
  *                 hC = h
  *             else: #chroma==0
  *                 logger.error(f'unsupport chroma format:{chroma}')             # <<<<<<<<<<<<<<
  * 
  * 
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_logger); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_logger); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_error); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 100, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_error); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 101, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyUnicode_From_enum__de265_chroma(__pyx_v_chroma, 0, ' ', 'd'); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 100, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyUnicode_From_enum__de265_chroma(__pyx_v_chroma, 0, ' ', 'd'); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_6 = __Pyx_PyUnicode_Concat(__pyx_kp_u_unsupport_chroma_format, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 100, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyUnicode_Concat(__pyx_kp_u_unsupport_chroma_format, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 101, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_3 = NULL;
@@ -4293,7 +4293,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
         __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
         __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 101, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       }
@@ -4301,7 +4301,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       break;
     }
 
-    /* "pylibde265.pyx":103
+    /* "pylibde265.pyx":104
  * 
  * 
  *             bufferY = pylibde265.de265_get_image_plane(image_ptr,0,&outstride)             # <<<<<<<<<<<<<<
@@ -4310,54 +4310,54 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
     __pyx_v_bufferY = de265_get_image_plane(__pyx_v_image_ptr, 0, (&__pyx_v_outstride));
 
-    /* "pylibde265.pyx":104
+    /* "pylibde265.pyx":105
  * 
  *             bufferY = pylibde265.de265_get_image_plane(image_ptr,0,&outstride)
  *             planeY = cp.frombuffer(bufferY[0:h*w], dtype='uint8').reshape((h, w))             # <<<<<<<<<<<<<<
  * 
  *             bufferCb = pylibde265.de265_get_image_plane(image_ptr,1,&outstride)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_cp); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_cp); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyNumber_Multiply(__pyx_v_h, __pyx_v_w); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_4 = PyNumber_Multiply(__pyx_v_h, __pyx_v_w); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_1 = (__pyx_t_4 == Py_None);
     if (__pyx_t_1) {
       __pyx_t_7 = PY_SSIZE_T_MAX;
     } else {
-      __pyx_t_8 = __Pyx_PyIndex_AsSsize_t(__pyx_t_4); if (unlikely((__pyx_t_8 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 104, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyIndex_AsSsize_t(__pyx_t_4); if (unlikely((__pyx_t_8 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 105, __pyx_L1_error)
       __pyx_t_7 = __pyx_t_8;
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyBytes_FromStringAndSize(((const char*)__pyx_v_bufferY) + 0, __pyx_t_7 - 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyBytes_FromStringAndSize(((const char*)__pyx_v_bufferY) + 0, __pyx_t_7 - 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_4);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4)) __PYX_ERR(0, 104, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4)) __PYX_ERR(0, 105, __pyx_L1_error);
     __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_n_u_uint8) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
-    __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 104, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_n_u_uint8) < 0) __PYX_ERR(0, 105, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_reshape); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_reshape); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_INCREF(__pyx_v_h);
     __Pyx_GIVEREF(__pyx_v_h);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_v_h)) __PYX_ERR(0, 104, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_v_h)) __PYX_ERR(0, 105, __pyx_L1_error);
     __Pyx_INCREF(__pyx_v_w);
     __Pyx_GIVEREF(__pyx_v_w);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_v_w)) __PYX_ERR(0, 104, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_v_w)) __PYX_ERR(0, 105, __pyx_L1_error);
     __pyx_t_3 = NULL;
     __pyx_t_5 = 0;
     #if CYTHON_UNPACK_METHODS
@@ -4377,14 +4377,14 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 105, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
     __pyx_v_planeY = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "pylibde265.pyx":106
+    /* "pylibde265.pyx":107
  *             planeY = cp.frombuffer(bufferY[0:h*w], dtype='uint8').reshape((h, w))
  * 
  *             bufferCb = pylibde265.de265_get_image_plane(image_ptr,1,&outstride)             # <<<<<<<<<<<<<<
@@ -4393,58 +4393,58 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
     __pyx_v_bufferCb = de265_get_image_plane(__pyx_v_image_ptr, 1, (&__pyx_v_outstride));
 
-    /* "pylibde265.pyx":107
+    /* "pylibde265.pyx":108
  * 
  *             bufferCb = pylibde265.de265_get_image_plane(image_ptr,1,&outstride)
  *             planeCb = cp.frombuffer(bufferCb[0:hC*wC], dtype='uint8').reshape((hC, wC))             # <<<<<<<<<<<<<<
  *             planeCb = cu_zoom(planeCb,(w//wC,h//hC),order=0)
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_cp); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 107, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_cp); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 107, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_v_hC)) { __Pyx_RaiseUnboundLocalError("hC"); __PYX_ERR(0, 107, __pyx_L1_error) }
-    if (unlikely(!__pyx_v_wC)) { __Pyx_RaiseUnboundLocalError("wC"); __PYX_ERR(0, 107, __pyx_L1_error) }
-    __pyx_t_4 = PyNumber_Multiply(__pyx_v_hC, __pyx_v_wC); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 107, __pyx_L1_error)
+    if (unlikely(!__pyx_v_hC)) { __Pyx_RaiseUnboundLocalError("hC"); __PYX_ERR(0, 108, __pyx_L1_error) }
+    if (unlikely(!__pyx_v_wC)) { __Pyx_RaiseUnboundLocalError("wC"); __PYX_ERR(0, 108, __pyx_L1_error) }
+    __pyx_t_4 = PyNumber_Multiply(__pyx_v_hC, __pyx_v_wC); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_1 = (__pyx_t_4 == Py_None);
     if (__pyx_t_1) {
       __pyx_t_7 = PY_SSIZE_T_MAX;
     } else {
-      __pyx_t_8 = __Pyx_PyIndex_AsSsize_t(__pyx_t_4); if (unlikely((__pyx_t_8 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 107, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyIndex_AsSsize_t(__pyx_t_4); if (unlikely((__pyx_t_8 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 108, __pyx_L1_error)
       __pyx_t_7 = __pyx_t_8;
     }
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyBytes_FromStringAndSize(((const char*)__pyx_v_bufferCb) + 0, __pyx_t_7 - 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 107, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyBytes_FromStringAndSize(((const char*)__pyx_v_bufferCb) + 0, __pyx_t_7 - 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 107, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_4);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4)) __PYX_ERR(0, 107, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4)) __PYX_ERR(0, 108, __pyx_L1_error);
     __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 107, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_n_u_uint8) < 0) __PYX_ERR(0, 107, __pyx_L1_error)
-    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 107, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_n_u_uint8) < 0) __PYX_ERR(0, 108, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_reshape); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 107, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_reshape); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_v_hC)) { __Pyx_RaiseUnboundLocalError("hC"); __PYX_ERR(0, 107, __pyx_L1_error) }
-    if (unlikely(!__pyx_v_wC)) { __Pyx_RaiseUnboundLocalError("wC"); __PYX_ERR(0, 107, __pyx_L1_error) }
-    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 107, __pyx_L1_error)
+    if (unlikely(!__pyx_v_hC)) { __Pyx_RaiseUnboundLocalError("hC"); __PYX_ERR(0, 108, __pyx_L1_error) }
+    if (unlikely(!__pyx_v_wC)) { __Pyx_RaiseUnboundLocalError("wC"); __PYX_ERR(0, 108, __pyx_L1_error) }
+    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_INCREF(__pyx_v_hC);
     __Pyx_GIVEREF(__pyx_v_hC);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_hC)) __PYX_ERR(0, 107, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_hC)) __PYX_ERR(0, 108, __pyx_L1_error);
     __Pyx_INCREF(__pyx_v_wC);
     __Pyx_GIVEREF(__pyx_v_wC);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_v_wC)) __PYX_ERR(0, 107, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_v_wC)) __PYX_ERR(0, 108, __pyx_L1_error);
     __pyx_t_3 = NULL;
     __pyx_t_5 = 0;
     #if CYTHON_UNPACK_METHODS
@@ -4464,48 +4464,48 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 108, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
     __pyx_v_planeCb = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "pylibde265.pyx":108
+    /* "pylibde265.pyx":109
  *             bufferCb = pylibde265.de265_get_image_plane(image_ptr,1,&outstride)
  *             planeCb = cp.frombuffer(bufferCb[0:hC*wC], dtype='uint8').reshape((hC, wC))
  *             planeCb = cu_zoom(planeCb,(w//wC,h//hC),order=0)             # <<<<<<<<<<<<<<
  * 
  *             bufferCr = pylibde265.de265_get_image_plane(image_ptr,2,&outstride)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_cu_zoom); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 108, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_cu_zoom); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    if (unlikely(!__pyx_v_wC)) { __Pyx_RaiseUnboundLocalError("wC"); __PYX_ERR(0, 108, __pyx_L1_error) }
-    __pyx_t_4 = PyNumber_FloorDivide(__pyx_v_w, __pyx_v_wC); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 108, __pyx_L1_error)
+    if (unlikely(!__pyx_v_wC)) { __Pyx_RaiseUnboundLocalError("wC"); __PYX_ERR(0, 109, __pyx_L1_error) }
+    __pyx_t_4 = PyNumber_FloorDivide(__pyx_v_w, __pyx_v_wC); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    if (unlikely(!__pyx_v_hC)) { __Pyx_RaiseUnboundLocalError("hC"); __PYX_ERR(0, 108, __pyx_L1_error) }
-    __pyx_t_6 = PyNumber_FloorDivide(__pyx_v_h, __pyx_v_hC); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 108, __pyx_L1_error)
+    if (unlikely(!__pyx_v_hC)) { __Pyx_RaiseUnboundLocalError("hC"); __PYX_ERR(0, 109, __pyx_L1_error) }
+    __pyx_t_6 = PyNumber_FloorDivide(__pyx_v_h, __pyx_v_hC); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_4);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4)) __PYX_ERR(0, 108, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4)) __PYX_ERR(0, 109, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_6);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_6)) __PYX_ERR(0, 108, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_6)) __PYX_ERR(0, 109, __pyx_L1_error);
     __pyx_t_4 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 108, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_INCREF(__pyx_v_planeCb);
     __Pyx_GIVEREF(__pyx_v_planeCb);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_planeCb)) __PYX_ERR(0, 108, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_planeCb)) __PYX_ERR(0, 109, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_3);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error);
     __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_order, __pyx_int_0) < 0) __PYX_ERR(0, 108, __pyx_L1_error)
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 108, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_order, __pyx_int_0) < 0) __PYX_ERR(0, 109, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -4513,7 +4513,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
     __Pyx_DECREF_SET(__pyx_v_planeCb, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "pylibde265.pyx":110
+    /* "pylibde265.pyx":111
  *             planeCb = cu_zoom(planeCb,(w//wC,h//hC),order=0)
  * 
  *             bufferCr = pylibde265.de265_get_image_plane(image_ptr,2,&outstride)             # <<<<<<<<<<<<<<
@@ -4522,58 +4522,58 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  */
     __pyx_v_bufferCr = de265_get_image_plane(__pyx_v_image_ptr, 2, (&__pyx_v_outstride));
 
-    /* "pylibde265.pyx":111
+    /* "pylibde265.pyx":112
  * 
  *             bufferCr = pylibde265.de265_get_image_plane(image_ptr,2,&outstride)
  *             planeCr = cp.frombuffer(bufferCr[0:hC*wC], dtype='uint8').reshape((hC, wC))             # <<<<<<<<<<<<<<
  *             planeCr = cu_zoom(planeCr,(w//wC,h//hC),order=0)
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_cp); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_cp); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 111, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_frombuffer); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_v_hC)) { __Pyx_RaiseUnboundLocalError("hC"); __PYX_ERR(0, 111, __pyx_L1_error) }
-    if (unlikely(!__pyx_v_wC)) { __Pyx_RaiseUnboundLocalError("wC"); __PYX_ERR(0, 111, __pyx_L1_error) }
-    __pyx_t_3 = PyNumber_Multiply(__pyx_v_hC, __pyx_v_wC); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
+    if (unlikely(!__pyx_v_hC)) { __Pyx_RaiseUnboundLocalError("hC"); __PYX_ERR(0, 112, __pyx_L1_error) }
+    if (unlikely(!__pyx_v_wC)) { __Pyx_RaiseUnboundLocalError("wC"); __PYX_ERR(0, 112, __pyx_L1_error) }
+    __pyx_t_3 = PyNumber_Multiply(__pyx_v_hC, __pyx_v_wC); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_1 = (__pyx_t_3 == Py_None);
     if (__pyx_t_1) {
       __pyx_t_7 = PY_SSIZE_T_MAX;
     } else {
-      __pyx_t_8 = __Pyx_PyIndex_AsSsize_t(__pyx_t_3); if (unlikely((__pyx_t_8 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 111, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyIndex_AsSsize_t(__pyx_t_3); if (unlikely((__pyx_t_8 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 112, __pyx_L1_error)
       __pyx_t_7 = __pyx_t_8;
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyBytes_FromStringAndSize(((const char*)__pyx_v_bufferCr) + 0, __pyx_t_7 - 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyBytes_FromStringAndSize(((const char*)__pyx_v_bufferCr) + 0, __pyx_t_7 - 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 111, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_GIVEREF(__pyx_t_3);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error);
     __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_n_u_uint8) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
-    __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 111, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_dtype, __pyx_n_u_uint8) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_reshape); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 111, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_reshape); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (unlikely(!__pyx_v_hC)) { __Pyx_RaiseUnboundLocalError("hC"); __PYX_ERR(0, 111, __pyx_L1_error) }
-    if (unlikely(!__pyx_v_wC)) { __Pyx_RaiseUnboundLocalError("wC"); __PYX_ERR(0, 111, __pyx_L1_error) }
-    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 111, __pyx_L1_error)
+    if (unlikely(!__pyx_v_hC)) { __Pyx_RaiseUnboundLocalError("hC"); __PYX_ERR(0, 112, __pyx_L1_error) }
+    if (unlikely(!__pyx_v_wC)) { __Pyx_RaiseUnboundLocalError("wC"); __PYX_ERR(0, 112, __pyx_L1_error) }
+    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_INCREF(__pyx_v_hC);
     __Pyx_GIVEREF(__pyx_v_hC);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_v_hC)) __PYX_ERR(0, 111, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_v_hC)) __PYX_ERR(0, 112, __pyx_L1_error);
     __Pyx_INCREF(__pyx_v_wC);
     __Pyx_GIVEREF(__pyx_v_wC);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_v_wC)) __PYX_ERR(0, 111, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_v_wC)) __PYX_ERR(0, 112, __pyx_L1_error);
     __pyx_t_2 = NULL;
     __pyx_t_5 = 0;
     #if CYTHON_UNPACK_METHODS
@@ -4593,48 +4593,48 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 111, __pyx_L1_error)
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 112, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __pyx_v_planeCr = __pyx_t_4;
     __pyx_t_4 = 0;
 
-    /* "pylibde265.pyx":112
+    /* "pylibde265.pyx":113
  *             bufferCr = pylibde265.de265_get_image_plane(image_ptr,2,&outstride)
  *             planeCr = cp.frombuffer(bufferCr[0:hC*wC], dtype='uint8').reshape((hC, wC))
  *             planeCr = cu_zoom(planeCr,(w//wC,h//hC),order=0)             # <<<<<<<<<<<<<<
  * 
  *             image = cp.dstack((planeY,planeCb,planeCr))
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_cu_zoom); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 112, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_cu_zoom); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 113, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    if (unlikely(!__pyx_v_wC)) { __Pyx_RaiseUnboundLocalError("wC"); __PYX_ERR(0, 112, __pyx_L1_error) }
-    __pyx_t_3 = PyNumber_FloorDivide(__pyx_v_w, __pyx_v_wC); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
+    if (unlikely(!__pyx_v_wC)) { __Pyx_RaiseUnboundLocalError("wC"); __PYX_ERR(0, 113, __pyx_L1_error) }
+    __pyx_t_3 = PyNumber_FloorDivide(__pyx_v_w, __pyx_v_wC); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (unlikely(!__pyx_v_hC)) { __Pyx_RaiseUnboundLocalError("hC"); __PYX_ERR(0, 112, __pyx_L1_error) }
-    __pyx_t_9 = PyNumber_FloorDivide(__pyx_v_h, __pyx_v_hC); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 112, __pyx_L1_error)
+    if (unlikely(!__pyx_v_hC)) { __Pyx_RaiseUnboundLocalError("hC"); __PYX_ERR(0, 113, __pyx_L1_error) }
+    __pyx_t_9 = PyNumber_FloorDivide(__pyx_v_h, __pyx_v_hC); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 113, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 113, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_GIVEREF(__pyx_t_3);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_9);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_9)) __PYX_ERR(0, 112, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_9)) __PYX_ERR(0, 113, __pyx_L1_error);
     __pyx_t_3 = 0;
     __pyx_t_9 = 0;
-    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 112, __pyx_L1_error)
+    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 113, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_INCREF(__pyx_v_planeCr);
     __Pyx_GIVEREF(__pyx_v_planeCr);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_v_planeCr)) __PYX_ERR(0, 112, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_v_planeCr)) __PYX_ERR(0, 113, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_2)) __PYX_ERR(0, 113, __pyx_L1_error);
     __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 112, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 113, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_order, __pyx_int_0) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_9, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 112, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_order, __pyx_int_0) < 0) __PYX_ERR(0, 113, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_9, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -4642,29 +4642,29 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
     __Pyx_DECREF_SET(__pyx_v_planeCr, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "pylibde265.pyx":114
+    /* "pylibde265.pyx":115
  *             planeCr = cu_zoom(planeCr,(w//wC,h//hC),order=0)
  * 
  *             image = cp.dstack((planeY,planeCb,planeCr))             # <<<<<<<<<<<<<<
  * 
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_cp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 114, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_cp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 115, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_dstack); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 114, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_dstack); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 115, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 114, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 115, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_v_planeY);
     __Pyx_GIVEREF(__pyx_v_planeY);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_planeY)) __PYX_ERR(0, 114, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_planeY)) __PYX_ERR(0, 115, __pyx_L1_error);
     __Pyx_INCREF(__pyx_v_planeCb);
     __Pyx_GIVEREF(__pyx_v_planeCb);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_planeCb)) __PYX_ERR(0, 114, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_planeCb)) __PYX_ERR(0, 115, __pyx_L1_error);
     __Pyx_INCREF(__pyx_v_planeCr);
     __Pyx_GIVEREF(__pyx_v_planeCr);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 2, __pyx_v_planeCr)) __PYX_ERR(0, 114, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 2, __pyx_v_planeCr)) __PYX_ERR(0, 115, __pyx_L1_error);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
     #if CYTHON_UNPACK_METHODS
@@ -4684,14 +4684,14 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_9, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 114, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     }
     __pyx_v_image = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "pylibde265.pyx":117
+    /* "pylibde265.pyx":118
  * 
  * 
  *             return {'width':w,'height':h,'chroma':chroma,'bps':bps,             # <<<<<<<<<<<<<<
@@ -4699,46 +4699,46 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
  * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_3 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_width, __pyx_v_w) < 0) __PYX_ERR(0, 117, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_height, __pyx_v_h) < 0) __PYX_ERR(0, 117, __pyx_L1_error)
-    __pyx_t_9 = __Pyx_PyInt_From_enum__de265_chroma(__pyx_v_chroma); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_width, __pyx_v_w) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_height, __pyx_v_h) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyInt_From_enum__de265_chroma(__pyx_v_chroma); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_chroma, __pyx_t_9) < 0) __PYX_ERR(0, 117, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_chroma, __pyx_t_9) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyInt_From_int(__pyx_v_bps); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 117, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyInt_From_int(__pyx_v_bps); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_bps, __pyx_t_9) < 0) __PYX_ERR(0, 117, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_bps, __pyx_t_9) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "pylibde265.pyx":118
+    /* "pylibde265.pyx":119
  * 
  *             return {'width':w,'height':h,'chroma':chroma,'bps':bps,
  *                     'pts':pts,'ttd_max':ttd_max,'ttd':ttd,'image':image}             # <<<<<<<<<<<<<<
  * 
  *         return None
  */
-    __pyx_t_9 = __Pyx_PyInt_From_int64_t(__pyx_v_pts); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 118, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyInt_From_int64_t(__pyx_v_pts); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_pts, __pyx_t_9) < 0) __PYX_ERR(0, 117, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_pts, __pyx_t_9) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyInt_From_int(__pyx_v_ttd_max); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 118, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyInt_From_int(__pyx_v_ttd_max); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_ttd_max, __pyx_t_9) < 0) __PYX_ERR(0, 117, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_ttd_max, __pyx_t_9) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyInt_From_int(__pyx_v_ttd); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 118, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyInt_From_int(__pyx_v_ttd); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_ttd, __pyx_t_9) < 0) __PYX_ERR(0, 117, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_ttd, __pyx_t_9) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_image, __pyx_v_image) < 0) __PYX_ERR(0, 117, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_u_image, __pyx_v_image) < 0) __PYX_ERR(0, 118, __pyx_L1_error)
     __pyx_r = __pyx_t_3;
     __pyx_t_3 = 0;
     goto __pyx_L0;
     __pyx_L3_continue:;
   }
 
-  /* "pylibde265.pyx":120
+  /* "pylibde265.pyx":121
  *                     'pts':pts,'ttd_max':ttd_max,'ttd':ttd,'image':image}
  * 
  *         return None             # <<<<<<<<<<<<<<
@@ -4749,7 +4749,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
 
-  /* "pylibde265.pyx":58
+  /* "pylibde265.pyx":59
  *         return dec_error
  * 
  *     def decode_frame(self):             # <<<<<<<<<<<<<<
@@ -4782,7 +4782,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_6decode_frame(struct
 }
 static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "pylibde265.pyx":122
+/* "pylibde265.pyx":123
  *         return None
  * 
  *     def decode(self):             # <<<<<<<<<<<<<<
@@ -4843,7 +4843,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_8decode(struct __pyx
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_10pylibde265___pyx_scope_struct__decode *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 122, __pyx_L1_error)
+    __PYX_ERR(0, 123, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -4851,7 +4851,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_8decode(struct __pyx
   __Pyx_INCREF((PyObject *)__pyx_cur_scope->__pyx_v_self);
   __Pyx_GIVEREF((PyObject *)__pyx_cur_scope->__pyx_v_self);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10pylibde265_18pylibde265_decoder_10generator, __pyx_codeobj__2, (PyObject *) __pyx_cur_scope, __pyx_n_s_decode, __pyx_n_s_pylibde265_decoder_decode, __pyx_n_s_pylibde265); if (unlikely(!gen)) __PYX_ERR(0, 122, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_10pylibde265_18pylibde265_decoder_10generator, __pyx_codeobj__2, (PyObject *) __pyx_cur_scope, __pyx_n_s_decode, __pyx_n_s_pylibde265_decoder_decode, __pyx_n_s_pylibde265); if (unlikely(!gen)) __PYX_ERR(0, 123, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -4889,16 +4889,16 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 122, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 123, __pyx_L1_error)
 
-  /* "pylibde265.pyx":123
+  /* "pylibde265.pyx":124
  * 
  *     def decode(self):
  *         next_image = self.decode_frame()             # <<<<<<<<<<<<<<
  *         while next_image is not None:
  *             yield next_image
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_cur_scope->__pyx_v_self), __pyx_n_s_decode_frame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_cur_scope->__pyx_v_self), __pyx_n_s_decode_frame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -4918,7 +4918,7 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -4926,7 +4926,7 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
   __pyx_cur_scope->__pyx_v_next_image = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "pylibde265.pyx":124
+  /* "pylibde265.pyx":125
  *     def decode(self):
  *         next_image = self.decode_frame()
  *         while next_image is not None:             # <<<<<<<<<<<<<<
@@ -4937,7 +4937,7 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
     __pyx_t_5 = (__pyx_cur_scope->__pyx_v_next_image != Py_None);
     if (!__pyx_t_5) break;
 
-    /* "pylibde265.pyx":125
+    /* "pylibde265.pyx":126
  *         next_image = self.decode_frame()
  *         while next_image is not None:
  *             yield next_image             # <<<<<<<<<<<<<<
@@ -4953,18 +4953,18 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
     __pyx_generator->resume_label = 1;
     return __pyx_r;
     __pyx_L6_resume_from_yield:;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 125, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 126, __pyx_L1_error)
 
-    /* "pylibde265.pyx":126
+    /* "pylibde265.pyx":127
  *         while next_image is not None:
  *             yield next_image
  *             start_t = time.time()             # <<<<<<<<<<<<<<
  *             next_image = self.decode_frame()
  *             print('ALL',time.time()-start_t)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 126, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 127, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 126, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 127, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = NULL;
@@ -4985,7 +4985,7 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
       PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
@@ -4994,14 +4994,14 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
     __Pyx_GIVEREF(__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "pylibde265.pyx":127
+    /* "pylibde265.pyx":128
  *             yield next_image
  *             start_t = time.time()
  *             next_image = self.decode_frame()             # <<<<<<<<<<<<<<
  *             print('ALL',time.time()-start_t)
  *             self.free_image()
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_cur_scope->__pyx_v_self), __pyx_n_s_decode_frame); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 127, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_cur_scope->__pyx_v_self), __pyx_n_s_decode_frame); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 128, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_2 = NULL;
     __pyx_t_4 = 0;
@@ -5021,7 +5021,7 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
       PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
@@ -5030,16 +5030,16 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
     __Pyx_GIVEREF(__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "pylibde265.pyx":128
+    /* "pylibde265.pyx":129
  *             start_t = time.time()
  *             next_image = self.decode_frame()
  *             print('ALL',time.time()-start_t)             # <<<<<<<<<<<<<<
  *             self.free_image()
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 128, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_time); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 129, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = NULL;
@@ -5060,34 +5060,34 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
-    __pyx_t_2 = PyNumber_Subtract(__pyx_t_1, __pyx_cur_scope->__pyx_v_start_t); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
+    __pyx_t_2 = PyNumber_Subtract(__pyx_t_1, __pyx_cur_scope->__pyx_v_start_t); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 128, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_n_u_ALL);
     __Pyx_GIVEREF(__pyx_n_u_ALL);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_n_u_ALL)) __PYX_ERR(0, 128, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_n_u_ALL)) __PYX_ERR(0, 129, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error);
     __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 128, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "pylibde265.pyx":129
+    /* "pylibde265.pyx":130
  *             next_image = self.decode_frame()
  *             print('ALL',time.time()-start_t)
  *             self.free_image()             # <<<<<<<<<<<<<<
  * 
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_cur_scope->__pyx_v_self), __pyx_n_s_free_image); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 129, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_cur_scope->__pyx_v_self), __pyx_n_s_free_image); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_3 = NULL;
     __pyx_t_4 = 0;
@@ -5107,7 +5107,7 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
       PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     }
@@ -5115,7 +5115,7 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
   }
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "pylibde265.pyx":122
+  /* "pylibde265.pyx":123
  *         return None
  * 
  *     def decode(self):             # <<<<<<<<<<<<<<
@@ -5143,7 +5143,7 @@ static PyObject *__pyx_gb_10pylibde265_18pylibde265_decoder_10generator(__pyx_Co
   return __pyx_r;
 }
 
-/* "pylibde265.pyx":133
+/* "pylibde265.pyx":134
  * 
  * 
  *     def free_image(self):             # <<<<<<<<<<<<<<
@@ -5197,7 +5197,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_11free_image(struct 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("free_image", 1);
 
-  /* "pylibde265.pyx":134
+  /* "pylibde265.pyx":135
  * 
  *     def free_image(self):
  *         pylibde265.de265_release_next_picture(self.ctx)             # <<<<<<<<<<<<<<
@@ -5206,7 +5206,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_11free_image(struct 
  */
   de265_release_next_picture(__pyx_v_self->ctx);
 
-  /* "pylibde265.pyx":133
+  /* "pylibde265.pyx":134
  * 
  * 
  *     def free_image(self):             # <<<<<<<<<<<<<<
@@ -5221,7 +5221,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_11free_image(struct 
   return __pyx_r;
 }
 
-/* "pylibde265.pyx":136
+/* "pylibde265.pyx":137
  *         pylibde265.de265_release_next_picture(self.ctx)
  * 
  *     def stop(self):             # <<<<<<<<<<<<<<
@@ -5282,7 +5282,7 @@ static PyObject *__pyx_pf_10pylibde265_18pylibde265_decoder_13stop(CYTHON_UNUSED
   return __pyx_r;
 }
 
-/* "pylibde265.pyx":139
+/* "pylibde265.pyx":140
  *         pass
  * 
  *     def get_PTS(self):             # <<<<<<<<<<<<<<
@@ -6012,7 +6012,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
 }
 /* #### Code section: cached_builtins ### */
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 80, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
@@ -6024,91 +6024,91 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "pylibde265.pyx":43
+  /* "pylibde265.pyx":44
  * 
  *     def load(self,data):
  *         buffer = bytearray(102400)             # <<<<<<<<<<<<<<
  *         cdef char* ba = buffer
  *         cdef int user_data = 0
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_int_102400); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_int_102400); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "pylibde265.pyx":15
+  /* "pylibde265.pyx":16
  * import time
  * 
  * def get_version()->None:             # <<<<<<<<<<<<<<
  *     return pylibde265.de265_get_version().decode('ascii')
  * 
  */
-  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_get_version, 15, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_get_version, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 16, __pyx_L1_error)
 
-  /* "pylibde265.pyx":42
+  /* "pylibde265.pyx":43
  * 
  * 
  *     def load(self,data):             # <<<<<<<<<<<<<<
  *         buffer = bytearray(102400)
  *         cdef char* ba = buffer
  */
-  __pyx_tuple__6 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_data, __pyx_n_s_buffer, __pyx_n_s_ba, __pyx_n_s_user_data, __pyx_n_s_pts, __pyx_n_s_bytes_read, __pyx_n_s_dec_error); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_tuple__6 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_data, __pyx_n_s_buffer, __pyx_n_s_ba, __pyx_n_s_user_data, __pyx_n_s_pts, __pyx_n_s_bytes_read, __pyx_n_s_dec_error); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_load, 42, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_load, 43, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 43, __pyx_L1_error)
 
-  /* "pylibde265.pyx":58
+  /* "pylibde265.pyx":59
  *         return dec_error
  * 
  *     def decode_frame(self):             # <<<<<<<<<<<<<<
  * 
  *         cdef int more = 1
  */
-  __pyx_tuple__8 = PyTuple_Pack(22, __pyx_n_s_self, __pyx_n_s_more, __pyx_n_s_bufferY, __pyx_n_s_bufferCb, __pyx_n_s_bufferCr, __pyx_n_s_outstride, __pyx_n_s_start_t, __pyx_n_s_dec_error, __pyx_n_s_image_ptr, __pyx_n_s_w, __pyx_n_s_h, __pyx_n_s_chroma, __pyx_n_s_bps, __pyx_n_s_pts, __pyx_n_s_ttd_max, __pyx_n_s_ttd, __pyx_n_s_wC, __pyx_n_s_hC, __pyx_n_s_planeY, __pyx_n_s_planeCb, __pyx_n_s_planeCr, __pyx_n_s_image); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(22, __pyx_n_s_self, __pyx_n_s_more, __pyx_n_s_bufferY, __pyx_n_s_bufferCb, __pyx_n_s_bufferCr, __pyx_n_s_outstride, __pyx_n_s_start_t, __pyx_n_s_dec_error, __pyx_n_s_image_ptr, __pyx_n_s_w, __pyx_n_s_h, __pyx_n_s_chroma, __pyx_n_s_bps, __pyx_n_s_pts, __pyx_n_s_ttd_max, __pyx_n_s_ttd, __pyx_n_s_wC, __pyx_n_s_hC, __pyx_n_s_planeY, __pyx_n_s_planeCb, __pyx_n_s_planeCr, __pyx_n_s_image); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 22, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_decode_frame, 58, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 22, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_decode_frame, 59, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 59, __pyx_L1_error)
 
-  /* "pylibde265.pyx":122
+  /* "pylibde265.pyx":123
  *         return None
  * 
  *     def decode(self):             # <<<<<<<<<<<<<<
  *         next_image = self.decode_frame()
  *         while next_image is not None:
  */
-  __pyx_tuple__10 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_next_image, __pyx_n_s_start_t); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_tuple__10 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_next_image, __pyx_n_s_start_t); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_decode, 122, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_decode, 123, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 123, __pyx_L1_error)
 
-  /* "pylibde265.pyx":133
+  /* "pylibde265.pyx":134
  * 
  * 
  *     def free_image(self):             # <<<<<<<<<<<<<<
  *         pylibde265.de265_release_next_picture(self.ctx)
  * 
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
-  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_free_image, 133, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_free_image, 134, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 134, __pyx_L1_error)
 
-  /* "pylibde265.pyx":136
+  /* "pylibde265.pyx":137
  *         pylibde265.de265_release_next_picture(self.ctx)
  * 
  *     def stop(self):             # <<<<<<<<<<<<<<
  *         pass
  * 
  */
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_stop, 136, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_stop, 137, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 137, __pyx_L1_error)
 
-  /* "pylibde265.pyx":139
+  /* "pylibde265.pyx":140
  *         pass
  * 
  *     def get_PTS(self):             # <<<<<<<<<<<<<<
  *         pass
  * 
  */
-  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_get_PTS, 139, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_get_PTS, 140, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 140, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
@@ -6191,15 +6191,15 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_10pylibde265_pylibde265_decoder = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10pylibde265_pylibde265_decoder_spec, NULL); if (unlikely(!__pyx_ptype_10pylibde265_pylibde265_decoder)) __PYX_ERR(0, 26, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10pylibde265_pylibde265_decoder_spec, __pyx_ptype_10pylibde265_pylibde265_decoder) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_ptype_10pylibde265_pylibde265_decoder = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10pylibde265_pylibde265_decoder_spec, NULL); if (unlikely(!__pyx_ptype_10pylibde265_pylibde265_decoder)) __PYX_ERR(0, 27, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10pylibde265_pylibde265_decoder_spec, __pyx_ptype_10pylibde265_pylibde265_decoder) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
   #else
   __pyx_ptype_10pylibde265_pylibde265_decoder = &__pyx_type_10pylibde265_pylibde265_decoder;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_10pylibde265_pylibde265_decoder) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_10pylibde265_pylibde265_decoder) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_10pylibde265_pylibde265_decoder->tp_print = 0;
@@ -6209,20 +6209,20 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_10pylibde265_pylibde265_decoder->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_pylibde265_decoder, (PyObject *) __pyx_ptype_10pylibde265_pylibde265_decoder) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_pylibde265_decoder, (PyObject *) __pyx_ptype_10pylibde265_pylibde265_decoder) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_10pylibde265_pylibde265_decoder) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_10pylibde265_pylibde265_decoder) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_10pylibde265___pyx_scope_struct__decode = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10pylibde265___pyx_scope_struct__decode_spec, NULL); if (unlikely(!__pyx_ptype_10pylibde265___pyx_scope_struct__decode)) __PYX_ERR(0, 122, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10pylibde265___pyx_scope_struct__decode_spec, __pyx_ptype_10pylibde265___pyx_scope_struct__decode) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_ptype_10pylibde265___pyx_scope_struct__decode = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_10pylibde265___pyx_scope_struct__decode_spec, NULL); if (unlikely(!__pyx_ptype_10pylibde265___pyx_scope_struct__decode)) __PYX_ERR(0, 123, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_10pylibde265___pyx_scope_struct__decode_spec, __pyx_ptype_10pylibde265___pyx_scope_struct__decode) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
   #else
   __pyx_ptype_10pylibde265___pyx_scope_struct__decode = &__pyx_type_10pylibde265___pyx_scope_struct__decode;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_10pylibde265___pyx_scope_struct__decode) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_10pylibde265___pyx_scope_struct__decode) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_10pylibde265___pyx_scope_struct__decode->tp_print = 0;
@@ -6542,185 +6542,185 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "pylibde265.pyx":7
- * #cimport cython
+  /* "pylibde265.pyx":8
+ * from libc.stdint cimport uint32_t,int64_t,uint8_t
  * from libc.stdio cimport printf
  * from loguru import logger             # <<<<<<<<<<<<<<
  * #import numpy as np
  * import cupy as cp
  */
-  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_logger);
   __Pyx_GIVEREF(__pyx_n_s_logger);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_logger)) __PYX_ERR(0, 7, __pyx_L1_error);
-  __pyx_t_3 = __Pyx_Import(__pyx_n_s_loguru, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 7, __pyx_L1_error)
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_logger)) __PYX_ERR(0, 8, __pyx_L1_error);
+  __pyx_t_3 = __Pyx_Import(__pyx_n_s_loguru, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_logger); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_logger); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_logger, __pyx_t_2) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_logger, __pyx_t_2) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "pylibde265.pyx":9
+  /* "pylibde265.pyx":10
  * from loguru import logger
  * #import numpy as np
  * import cupy as cp             # <<<<<<<<<<<<<<
  * #import dpnp as np TODO:0.14 does not support frombuffer
  * from cupyx.scipy.ndimage import zoom as cu_zoom
  */
-  __pyx_t_3 = __Pyx_ImportDottedModule(__pyx_n_s_cupy, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_ImportDottedModule(__pyx_n_s_cupy, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cp, __pyx_t_3) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cp, __pyx_t_3) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "pylibde265.pyx":11
+  /* "pylibde265.pyx":12
  * import cupy as cp
  * #import dpnp as np TODO:0.14 does not support frombuffer
  * from cupyx.scipy.ndimage import zoom as cu_zoom             # <<<<<<<<<<<<<<
  * from scipy.ndimage import zoom
  * import time
  */
-  __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_n_s_zoom);
   __Pyx_GIVEREF(__pyx_n_s_zoom);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_zoom)) __PYX_ERR(0, 11, __pyx_L1_error);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_cupyx_scipy_ndimage, __pyx_t_3, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 11, __pyx_L1_error)
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_zoom)) __PYX_ERR(0, 12, __pyx_L1_error);
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_cupyx_scipy_ndimage, __pyx_t_3, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_zoom); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_zoom); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cu_zoom, __pyx_t_3) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cu_zoom, __pyx_t_3) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "pylibde265.pyx":12
+  /* "pylibde265.pyx":13
  * #import dpnp as np TODO:0.14 does not support frombuffer
  * from cupyx.scipy.ndimage import zoom as cu_zoom
  * from scipy.ndimage import zoom             # <<<<<<<<<<<<<<
  * import time
  * 
  */
-  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_zoom);
   __Pyx_GIVEREF(__pyx_n_s_zoom);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_zoom)) __PYX_ERR(0, 12, __pyx_L1_error);
-  __pyx_t_3 = __Pyx_Import(__pyx_n_s_scipy_ndimage, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 12, __pyx_L1_error)
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_zoom)) __PYX_ERR(0, 13, __pyx_L1_error);
+  __pyx_t_3 = __Pyx_Import(__pyx_n_s_scipy_ndimage, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_zoom); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_zoom); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_zoom, __pyx_t_2) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_zoom, __pyx_t_2) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "pylibde265.pyx":13
+  /* "pylibde265.pyx":14
  * from cupyx.scipy.ndimage import zoom as cu_zoom
  * from scipy.ndimage import zoom
  * import time             # <<<<<<<<<<<<<<
  * 
  * def get_version()->None:
  */
-  __pyx_t_3 = __Pyx_ImportDottedModule(__pyx_n_s_time, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_ImportDottedModule(__pyx_n_s_time, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_time, __pyx_t_3) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_time, __pyx_t_3) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "pylibde265.pyx":15
+  /* "pylibde265.pyx":16
  * import time
  * 
  * def get_version()->None:             # <<<<<<<<<<<<<<
  *     return pylibde265.de265_get_version().decode('ascii')
  * 
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_1get_version, 0, __pyx_n_s_get_version, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_None) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_1get_version, 0, __pyx_n_s_get_version, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_version, __pyx_t_2) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_version, __pyx_t_2) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "pylibde265.pyx":42
+  /* "pylibde265.pyx":43
  * 
  * 
  *     def load(self,data):             # <<<<<<<<<<<<<<
  *         buffer = bytearray(102400)
  *         cdef char* ba = buffer
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_18pylibde265_decoder_5load, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_pylibde265_decoder_load, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_18pylibde265_decoder_5load, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_pylibde265_decoder_load, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pylibde265_pylibde265_decoder, __pyx_n_s_load, __pyx_t_2) < 0) __PYX_ERR(0, 42, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pylibde265_pylibde265_decoder, __pyx_n_s_load, __pyx_t_2) < 0) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_10pylibde265_pylibde265_decoder);
 
-  /* "pylibde265.pyx":58
+  /* "pylibde265.pyx":59
  *         return dec_error
  * 
  *     def decode_frame(self):             # <<<<<<<<<<<<<<
  * 
  *         cdef int more = 1
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_18pylibde265_decoder_7decode_frame, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_pylibde265_decoder_decode_frame, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_18pylibde265_decoder_7decode_frame, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_pylibde265_decoder_decode_frame, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pylibde265_pylibde265_decoder, __pyx_n_s_decode_frame, __pyx_t_2) < 0) __PYX_ERR(0, 58, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pylibde265_pylibde265_decoder, __pyx_n_s_decode_frame, __pyx_t_2) < 0) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_10pylibde265_pylibde265_decoder);
 
-  /* "pylibde265.pyx":122
+  /* "pylibde265.pyx":123
  *         return None
  * 
  *     def decode(self):             # <<<<<<<<<<<<<<
  *         next_image = self.decode_frame()
  *         while next_image is not None:
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_18pylibde265_decoder_9decode, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_pylibde265_decoder_decode, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__2)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_18pylibde265_decoder_9decode, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_pylibde265_decoder_decode, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__2)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pylibde265_pylibde265_decoder, __pyx_n_s_decode, __pyx_t_2) < 0) __PYX_ERR(0, 122, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pylibde265_pylibde265_decoder, __pyx_n_s_decode, __pyx_t_2) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_10pylibde265_pylibde265_decoder);
 
-  /* "pylibde265.pyx":133
+  /* "pylibde265.pyx":134
  * 
  * 
  *     def free_image(self):             # <<<<<<<<<<<<<<
  *         pylibde265.de265_release_next_picture(self.ctx)
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_18pylibde265_decoder_12free_image, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_pylibde265_decoder_free_image, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 133, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_18pylibde265_decoder_12free_image, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_pylibde265_decoder_free_image, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pylibde265_pylibde265_decoder, __pyx_n_s_free_image, __pyx_t_2) < 0) __PYX_ERR(0, 133, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pylibde265_pylibde265_decoder, __pyx_n_s_free_image, __pyx_t_2) < 0) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_10pylibde265_pylibde265_decoder);
 
-  /* "pylibde265.pyx":136
+  /* "pylibde265.pyx":137
  *         pylibde265.de265_release_next_picture(self.ctx)
  * 
  *     def stop(self):             # <<<<<<<<<<<<<<
  *         pass
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_18pylibde265_decoder_14stop, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_pylibde265_decoder_stop, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 136, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_18pylibde265_decoder_14stop, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_pylibde265_decoder_stop, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pylibde265_pylibde265_decoder, __pyx_n_s_stop, __pyx_t_2) < 0) __PYX_ERR(0, 136, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pylibde265_pylibde265_decoder, __pyx_n_s_stop, __pyx_t_2) < 0) __PYX_ERR(0, 137, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_10pylibde265_pylibde265_decoder);
 
-  /* "pylibde265.pyx":139
+  /* "pylibde265.pyx":140
  *         pass
  * 
  *     def get_PTS(self):             # <<<<<<<<<<<<<<
  *         pass
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_18pylibde265_decoder_16get_PTS, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_pylibde265_decoder_get_PTS, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__14)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 139, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_10pylibde265_18pylibde265_decoder_16get_PTS, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_pylibde265_decoder_get_PTS, NULL, __pyx_n_s_pylibde265, __pyx_d, ((PyObject *)__pyx_codeobj__14)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pylibde265_pylibde265_decoder, __pyx_n_s_get_PTS, __pyx_t_2) < 0) __PYX_ERR(0, 139, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_10pylibde265_pylibde265_decoder, __pyx_n_s_get_PTS, __pyx_t_2) < 0) __PYX_ERR(0, 140, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_10pylibde265_pylibde265_decoder);
 

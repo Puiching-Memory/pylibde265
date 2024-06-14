@@ -3,6 +3,7 @@
 #cimport pylibde265
 cimport pylibde265
 #cimport cython
+from libc.stdint cimport uint32_t,int64_t,uint8_t
 from libc.stdio cimport printf
 from loguru import logger
 #import numpy as np
@@ -24,7 +25,7 @@ def get_version()->None:
 
 
 cdef class pylibde265_decoder(object):
-    cdef de265_decoder_context* ctx
+    cdef pylibde265.de265_decoder_context* ctx
 
     def __cinit__(self,threads:int):
         self.ctx = pylibde265.de265_new_decoder()
