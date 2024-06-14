@@ -1,0 +1,11 @@
+build/
+__pycache__/
+.vscode/
+dist/
+trashcan/
+cache/
+libde265/
+*.egg-info
+*.whl
+.coverage
+.pytest_cache
