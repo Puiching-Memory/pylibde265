@@ -1,0 +1,13 @@
+build/
+__pycache__/
+.vscode/
+dist/
+trashcan/
+cache/
+libde265/
+*.egg-info
+*.whl
+*.html
+.coverage
+.pytest_cache
+src/pylibde265/pyde265.c

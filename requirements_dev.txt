@@ -1,0 +1,13 @@
+# must be installed
+setuptools==75.8.0
+wheel==0.45.1
+cython==3.1.0a1
+build==1.2.2
+cmake==3.31.4
+
+# for Syntax prompt
+numpy==2.2.2
+scipy==1.15.1
+
+# optional dependencies
+pyinstrument==5.0.1

@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools==75.8.0", "wheel==0.45.1","cython==3.1.0a1","numpy>=2.0.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project]
+name = "pylibde265"
+dynamic = ["version"]
+authors = [
+  { name="梦归云帆", email="1138663075@qq.com" },
+]
+description = "Decode HEVC(H.265) video in python"
+keywords = ["libde265", "h265", "vedio", "decode", "mp4", "hevc", "python"]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "scipy>=1.14.0",
+  "numpy>=2.0.0",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Cython",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: Microsoft :: Windows",
+]
+
+[project.optional-dependencies]
+dependencies = [
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "pylibde265.__version__"}
+
+[tool.cyright]
+
+[project.urls]
+Homepage = "https://github.com/Puiching-Memory/pylibde265"
+Issues = "https://github.com/Puiching-Memory/pylibde265/issues"
