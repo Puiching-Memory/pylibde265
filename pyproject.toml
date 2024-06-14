@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0",'cython']
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pylibde265"
+version = "0.0.1"
+authors = [
+  { name="梦归云帆", email="1138663075@qq.com" },
+]
+description = "python binding implementation of libde265, based on cython"
+keywords = ["libde265", "h265", "vedio", "decode", "mp4"]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "loguru",
+  "cupy-cuda12x",
+  "scipy",
+  "numpy",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Cython",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: Microsoft :: Windows",
+]
+
+[project.optional-dependencies]
+dependencies = [
+]
+
+[project.urls]
+Homepage = "https://github.com/Puiching-Memory/pylibde265"
+Issues = "https://github.com/Puiching-Memory/pylibde265/issues"
