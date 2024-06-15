@@ -1,3 +1,22 @@
+<div align="center">
+  <p>
+    <a href="https://github.com/Puiching-Memory/pylibde265" target="_blank">
+      <img width="100%" src="./multimedia/image/title.png" alt="pylibde265 head image"></a>
+  </p>
+
+  [中文](https://github.com/Puiching-Memory/pylibde265/blob/main/README_zh.md) | [English](https://github.com/Puiching-Memory/pylibde265/blob/main/README.md)
+
+<div>
+    <a href=""><img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="windows:support"></a>
+    <br>
+    <a href=""><img src="https://img.shields.io/github/downloads/Puiching-Memory/pylibde265/total" alt="downloads:all"></a>
+    <a href=""><img src="https://img.shields.io/github/:variant/Puiching-Memory/pylibde265/latest/total" alt="downloads:latest_verson"></a>
+    <a href=""><img src="https://img.shields.io/pypi/:period/:packageName" alt="downloads:pypi"></a>
+</div>
+
+<br>
+
+
 # pylibde265
 
 python binding implementation of libde265, based on cython
@@ -9,3 +28,11 @@ python binding implementation of libde265, based on cython
 # build from source code
 
 `python -m build`
+
+版权
+
+标签来源：
+
+https://dev.to/envoy_/150-badges-for-github-pnk
+
+https://shields.io/badges
