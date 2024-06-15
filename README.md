@@ -34,9 +34,23 @@ libde265的Python绑定实现，基于cython
 
 # 从源代码构建
 
-`python -m build`
+1. 下载存储库`git clone https://github.com/Puiching-Memory/pylibde265.git`
+2. 运行 `python tools_build.py`
+
+环境需求
+
+```python
+cython
+setuptools>=61.0
+loguru
+cupy-cuda12x
+scipy
+numpy
+```
 
 # 常见问题
+
+# 贡献
 
 # 版权
 
@@ -46,7 +60,7 @@ libde265的Python绑定实现，基于cython
 
 ### 鸣谢
 
-libde265 C/C++仓库 : 作者@strukturag
+* libde265 C/C++仓库 : 作者[@strukturag](https://github.com/strukturag/libde265)
 
 ### 标签来源
 
