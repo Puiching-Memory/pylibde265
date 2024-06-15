@@ -18,9 +18,9 @@ def extension_sources(directory, suffix):
 
 ext_modules = [
     Extension("pylibde265",
-              sources=extension_sources('./pylibde265','.pyx'),
-              include_dirs=[os.path.abspath('./pylibde265/lib')],
-              libraries=['./pylibde265/lib/de265'],
+              sources=extension_sources('src/pylibde265/cylibde265','.pyx'),
+              include_dirs=[os.path.abspath('src/pylibde265/lib')],
+              libraries=['src/pylibde265/lib/de265'],
               #language='c++',
               #extra_compile_args=['-std=c++11'],
               )
@@ -29,6 +29,7 @@ ext_modules = [
 setup(
     name='pylibde265',
     ext_modules=cythonize(ext_modules),
-    packages=find_packages(include=['./pylibde265']),
-    cmdclass={"build_ext": build_ext},
+    #packages=find_packages(),
+    #packages=find_packages(include=['./pylibde265']),
+    #cmdclass={"build_ext": build_ext},
 )

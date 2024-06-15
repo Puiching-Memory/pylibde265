@@ -4,18 +4,18 @@
 {
     "distutils": {
         "depends": [
-            "pylibde265\\src\\de265.h"
+            "src\\pylibde265\\src\\de265.h"
         ],
         "include_dirs": [
-            "./pylibde265",
-            "D:\\GitHub\\pylibde265\\pylibde265\\lib"
+            "src/pylibde265/cylibde265",
+            "D:\\GitHub\\pylibde265\\src\\pylibde265\\lib"
         ],
         "libraries": [
-            "./pylibde265/lib/de265"
+            "src/pylibde265/lib/de265"
         ],
         "name": "pylibde265",
         "sources": [
-            "./pylibde265\\pylibde265.pyx"
+            "src/pylibde265/cylibde265\\pylibde265.pyx"
         ]
     },
     "module_name": "pylibde265"
@@ -1242,7 +1242,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 #define __PYX_HAVE_API__pylibde265
 /* Early includes */
 #include <stdint.h>
-#include "./src/de265.h"
+#include "../src/de265.h"
 #include <string.h>
 #include <stdio.h>
 #ifdef _OPENMP
@@ -1493,7 +1493,7 @@ static const char *__pyx_filename;
 /* #### Code section: filename_table ### */
 
 static const char *__pyx_f[] = {
-  "pylibde265\\\\pylibde265.pyx",
+  "src\\\\pylibde265\\\\cylibde265\\\\pylibde265.pyx",
   "<stringsource>",
 };
 /* #### Code section: utility_code_proto_before_types ### */
@@ -2443,13 +2443,13 @@ static const char __pyx_k_pylibde265_decoder_load[] = "pylibde265_decoder.load";
 static const char __pyx_k_pylibde265_decoder_stop[] = "pylibde265_decoder.stop";
 static const char __pyx_k_unsupport_chroma_format[] = "unsupport chroma format:";
 static const char __pyx_k_pylibde265_decoder_decode[] = "pylibde265_decoder.decode";
-static const char __pyx_k_pylibde265_pylibde265_pyx[] = "pylibde265\\pylibde265.pyx";
 static const char __pyx_k_pylibde265_decoder_get_PTS[] = "pylibde265_decoder.get_PTS";
 static const char __pyx_k_pylibde265_decoder_free_image[] = "pylibde265_decoder.free_image";
 static const char __pyx_k_pylibde265_decoder_decode_frame[] = "pylibde265_decoder.decode_frame";
 static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __reduce__ due to non-trivial __cinit__";
 static const char __pyx_k_pylibde265_decoder___reduce_cyth[] = "pylibde265_decoder.__reduce_cython__";
 static const char __pyx_k_pylibde265_decoder___setstate_cy[] = "pylibde265_decoder.__setstate_cython__";
+static const char __pyx_k_src_pylibde265_cylibde265_pylibd[] = "src\\pylibde265\\cylibde265\\pylibde265.pyx";
 /* #### Code section: decls ### */
 static PyObject *__pyx_pf_10pylibde265_get_version(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static int __pyx_pf_10pylibde265_18pylibde265_decoder___cinit__(struct __pyx_obj_10pylibde265_pylibde265_decoder *__pyx_v_self, PyObject *__pyx_v_threads); /* proto */
@@ -2580,7 +2580,6 @@ typedef struct {
   PyObject *__pyx_n_s_pylibde265_decoder_get_PTS;
   PyObject *__pyx_n_s_pylibde265_decoder_load;
   PyObject *__pyx_n_s_pylibde265_decoder_stop;
-  PyObject *__pyx_kp_s_pylibde265_pylibde265_pyx;
   PyObject *__pyx_n_s_pyx_state;
   PyObject *__pyx_n_s_readinto;
   PyObject *__pyx_n_s_reduce;
@@ -2594,6 +2593,7 @@ typedef struct {
   PyObject *__pyx_n_s_setstate;
   PyObject *__pyx_n_s_setstate_cython;
   PyObject *__pyx_n_s_spec;
+  PyObject *__pyx_kp_s_src_pylibde265_cylibde265_pylibd;
   PyObject *__pyx_n_s_start_t;
   PyObject *__pyx_n_s_stop;
   PyObject *__pyx_kp_s_stringsource;
@@ -2753,7 +2753,6 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_pylibde265_decoder_get_PTS);
   Py_CLEAR(clear_module_state->__pyx_n_s_pylibde265_decoder_load);
   Py_CLEAR(clear_module_state->__pyx_n_s_pylibde265_decoder_stop);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_pylibde265_pylibde265_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_pyx_state);
   Py_CLEAR(clear_module_state->__pyx_n_s_readinto);
   Py_CLEAR(clear_module_state->__pyx_n_s_reduce);
@@ -2767,6 +2766,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_setstate);
   Py_CLEAR(clear_module_state->__pyx_n_s_setstate_cython);
   Py_CLEAR(clear_module_state->__pyx_n_s_spec);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_src_pylibde265_cylibde265_pylibd);
   Py_CLEAR(clear_module_state->__pyx_n_s_start_t);
   Py_CLEAR(clear_module_state->__pyx_n_s_stop);
   Py_CLEAR(clear_module_state->__pyx_kp_s_stringsource);
@@ -2904,7 +2904,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_pylibde265_decoder_get_PTS);
   Py_VISIT(traverse_module_state->__pyx_n_s_pylibde265_decoder_load);
   Py_VISIT(traverse_module_state->__pyx_n_s_pylibde265_decoder_stop);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_pylibde265_pylibde265_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_pyx_state);
   Py_VISIT(traverse_module_state->__pyx_n_s_readinto);
   Py_VISIT(traverse_module_state->__pyx_n_s_reduce);
@@ -2918,6 +2917,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_setstate);
   Py_VISIT(traverse_module_state->__pyx_n_s_setstate_cython);
   Py_VISIT(traverse_module_state->__pyx_n_s_spec);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_src_pylibde265_cylibde265_pylibd);
   Py_VISIT(traverse_module_state->__pyx_n_s_start_t);
   Py_VISIT(traverse_module_state->__pyx_n_s_stop);
   Py_VISIT(traverse_module_state->__pyx_kp_s_stringsource);
@@ -3071,7 +3071,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_pylibde265_decoder_get_PTS __pyx_mstate_global->__pyx_n_s_pylibde265_decoder_get_PTS
 #define __pyx_n_s_pylibde265_decoder_load __pyx_mstate_global->__pyx_n_s_pylibde265_decoder_load
 #define __pyx_n_s_pylibde265_decoder_stop __pyx_mstate_global->__pyx_n_s_pylibde265_decoder_stop
-#define __pyx_kp_s_pylibde265_pylibde265_pyx __pyx_mstate_global->__pyx_kp_s_pylibde265_pylibde265_pyx
 #define __pyx_n_s_pyx_state __pyx_mstate_global->__pyx_n_s_pyx_state
 #define __pyx_n_s_readinto __pyx_mstate_global->__pyx_n_s_readinto
 #define __pyx_n_s_reduce __pyx_mstate_global->__pyx_n_s_reduce
@@ -3085,6 +3084,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_setstate __pyx_mstate_global->__pyx_n_s_setstate
 #define __pyx_n_s_setstate_cython __pyx_mstate_global->__pyx_n_s_setstate_cython
 #define __pyx_n_s_spec __pyx_mstate_global->__pyx_n_s_spec
+#define __pyx_kp_s_src_pylibde265_cylibde265_pylibd __pyx_mstate_global->__pyx_kp_s_src_pylibde265_cylibde265_pylibd
 #define __pyx_n_s_start_t __pyx_mstate_global->__pyx_n_s_start_t
 #define __pyx_n_s_stop __pyx_mstate_global->__pyx_n_s_stop
 #define __pyx_kp_s_stringsource __pyx_mstate_global->__pyx_kp_s_stringsource
@@ -5974,7 +5974,6 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_pylibde265_decoder_get_PTS, __pyx_k_pylibde265_decoder_get_PTS, sizeof(__pyx_k_pylibde265_decoder_get_PTS), 0, 0, 1, 1},
     {&__pyx_n_s_pylibde265_decoder_load, __pyx_k_pylibde265_decoder_load, sizeof(__pyx_k_pylibde265_decoder_load), 0, 0, 1, 1},
     {&__pyx_n_s_pylibde265_decoder_stop, __pyx_k_pylibde265_decoder_stop, sizeof(__pyx_k_pylibde265_decoder_stop), 0, 0, 1, 1},
-    {&__pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_k_pylibde265_pylibde265_pyx, sizeof(__pyx_k_pylibde265_pylibde265_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_pyx_state, __pyx_k_pyx_state, sizeof(__pyx_k_pyx_state), 0, 0, 1, 1},
     {&__pyx_n_s_readinto, __pyx_k_readinto, sizeof(__pyx_k_readinto), 0, 0, 1, 1},
     {&__pyx_n_s_reduce, __pyx_k_reduce, sizeof(__pyx_k_reduce), 0, 0, 1, 1},
@@ -5988,6 +5987,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_setstate, __pyx_k_setstate, sizeof(__pyx_k_setstate), 0, 0, 1, 1},
     {&__pyx_n_s_setstate_cython, __pyx_k_setstate_cython, sizeof(__pyx_k_setstate_cython), 0, 0, 1, 1},
     {&__pyx_n_s_spec, __pyx_k_spec, sizeof(__pyx_k_spec), 0, 0, 1, 1},
+    {&__pyx_kp_s_src_pylibde265_cylibde265_pylibd, __pyx_k_src_pylibde265_cylibde265_pylibd, sizeof(__pyx_k_src_pylibde265_cylibde265_pylibd), 0, 0, 1, 0},
     {&__pyx_n_s_start_t, __pyx_k_start_t, sizeof(__pyx_k_start_t), 0, 0, 1, 1},
     {&__pyx_n_s_stop, __pyx_k_stop, sizeof(__pyx_k_stop), 0, 0, 1, 1},
     {&__pyx_kp_s_stringsource, __pyx_k_stringsource, sizeof(__pyx_k_stringsource), 0, 0, 1, 0},
@@ -6042,7 +6042,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     return pylibde265.de265_get_version().decode('ascii')
  * 
  */
-  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_get_version, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_pylibde265_cylibde265_pylibd, __pyx_n_s_get_version, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 16, __pyx_L1_error)
 
   /* "pylibde265.pyx":43
  * 
@@ -6054,7 +6054,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__6 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_data, __pyx_n_s_buffer, __pyx_n_s_ba, __pyx_n_s_user_data, __pyx_n_s_pts, __pyx_n_s_bytes_read, __pyx_n_s_dec_error); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_load, 43, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_pylibde265_cylibde265_pylibd, __pyx_n_s_load, 43, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 43, __pyx_L1_error)
 
   /* "pylibde265.pyx":59
  *         return dec_error
@@ -6066,7 +6066,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__8 = PyTuple_Pack(22, __pyx_n_s_self, __pyx_n_s_more, __pyx_n_s_bufferY, __pyx_n_s_bufferCb, __pyx_n_s_bufferCr, __pyx_n_s_outstride, __pyx_n_s_start_t, __pyx_n_s_dec_error, __pyx_n_s_image_ptr, __pyx_n_s_w, __pyx_n_s_h, __pyx_n_s_chroma, __pyx_n_s_bps, __pyx_n_s_pts, __pyx_n_s_ttd_max, __pyx_n_s_ttd, __pyx_n_s_wC, __pyx_n_s_hC, __pyx_n_s_planeY, __pyx_n_s_planeCb, __pyx_n_s_planeCr, __pyx_n_s_image); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 22, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_decode_frame, 59, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 22, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_pylibde265_cylibde265_pylibd, __pyx_n_s_decode_frame, 59, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 59, __pyx_L1_error)
 
   /* "pylibde265.pyx":123
  *         return None
@@ -6078,7 +6078,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__10 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_next_image, __pyx_n_s_start_t); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__10);
   __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_decode, 123, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 123, __pyx_L1_error)
+  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_GENERATOR, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_pylibde265_cylibde265_pylibd, __pyx_n_s_decode, 123, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 123, __pyx_L1_error)
 
   /* "pylibde265.pyx":134
  * 
@@ -6090,7 +6090,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__11 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
-  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_free_image, 134, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 134, __pyx_L1_error)
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_pylibde265_cylibde265_pylibd, __pyx_n_s_free_image, 134, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 134, __pyx_L1_error)
 
   /* "pylibde265.pyx":137
  *         pylibde265.de265_release_next_picture(self.ctx)
@@ -6099,7 +6099,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         pass
  * 
  */
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_stop, 137, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 137, __pyx_L1_error)
+  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_pylibde265_cylibde265_pylibd, __pyx_n_s_stop, 137, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 137, __pyx_L1_error)
 
   /* "pylibde265.pyx":140
  *         pass
@@ -6108,7 +6108,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         pass
  * 
  */
-  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_pylibde265_pylibde265_pyx, __pyx_n_s_get_PTS, 140, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 140, __pyx_L1_error)
+  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_pylibde265_cylibde265_pylibd, __pyx_n_s_get_PTS, 140, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 140, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
