@@ -3,3 +3,4 @@ __pycache__/
 .vscode/
 dist/
 *.egg-info
+libde265/
