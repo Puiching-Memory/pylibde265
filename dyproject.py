@@ -1,3 +1,8 @@
+"""
+此文件用于动态配置pyproject.toml
+---
+"""
+
 import os
 
 toml_path = './pyproject.toml'
