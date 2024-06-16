@@ -2,7 +2,7 @@
 
 from libc.stdint cimport uint32_t,int64_t,uint8_t
 
-cdef extern from "../libde265/de265.h" nogil:
+cdef extern from "./libde265/de265.h" nogil:
 
     # === version numbers ===
 

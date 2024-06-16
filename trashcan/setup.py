@@ -14,13 +14,15 @@ def extension_sources(directory, suffix):
         for filename in filenames:  
             if filename.endswith(suffix):  
                 matches.append(os.path.join(root, filename))  
+
+    #print(matches)
     return matches  
 
 ext_modules = [
-    Extension("pylibde265",
-              sources=extension_sources('src/pylibde265/cylibde265','.pyx'),
-              include_dirs=[os.path.abspath('src/pylibde265/lib')],
-              libraries=['src/pylibde265/lib/de265'],
+    Extension("pylibde265.decode",
+              sources=['pylibde265/decode.pyx'],
+              include_dirs=['pylibde265/lib'],
+              libraries=['src/lib/de265'],
               #language='c++',
               #extra_compile_args=['-std=c++11'],
               )
@@ -29,7 +31,8 @@ ext_modules = [
 setup(
     name='pylibde265',
     ext_modules=cythonize(ext_modules),
-    #packages=find_packages(),
+    packages=['pylibde265'],
+    #package_data={"pylibde265.decode":['./pylibde265/decode']}
     #packages=find_packages(include=['./pylibde265']),
     #cmdclass={"build_ext": build_ext},
 )

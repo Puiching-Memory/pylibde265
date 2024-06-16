@@ -28,13 +28,19 @@ libde265的Python绑定实现，基于cython
 
 ### 警告！此存储库仍处于早期版本，代码会经常有破坏性更改，我们无法保证目前版本的兼容性
 
+# 概念
+
+<div>
+  <a href=""><img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="image:vedio_steam"></a>
+</div>
+
 # 快速开始
 
 # 性能
 
 # 从源代码构建
 
-1. 下载存储库`git clone https://github.com/Puiching-Memory/pylibde265.git`
+1. 下载存储库 `git clone https://github.com/Puiching-Memory/pylibde265.git`
 2. 运行 `python tools_build.py`
 
 环境需求
