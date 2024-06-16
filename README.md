@@ -31,7 +31,7 @@ libde265的Python绑定实现，基于cython
 # 概念
 
 <div>
-  <a href=""><img src="./multimedia/image/vedio_steam.drawio.png" alt="image:vedio_steam"></a>
+  <a href=""><img src="./multimedia/image/vedio_steam.jpg" alt="image:vedio_steam"></a>
 </div>
 
 # 快速开始

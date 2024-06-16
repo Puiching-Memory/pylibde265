@@ -4,3 +4,4 @@ __pycache__/
 dist/
 *.egg-info
 libde265/
+trashcan/
