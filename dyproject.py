@@ -10,10 +10,10 @@ with open(toml_path,'r',encoding='utf8') as file:
     #print(data)
     for index,line in enumerate(data):
         if line.startswith('library_dirs'):
-            print(line,index)
+            #print(line,index)
             data[index] = f'library_dirs = ["{include_path}"]\n'
 
-    print(data)
+    #print(data)
 
 with open(toml_path,'w',encoding='utf8') as file:
     file.writelines(data)
