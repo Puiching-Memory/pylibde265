@@ -1,39 +1,12 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=69.0.0", "wheel","cython>=3.0.10"]
+build-backend = "setuptools.build_meta"
 
-[tool.hatch.build.targets.wheel.hooks.cython]
-dependencies = ["hatch-cython"]
+[tool.setuptools]
+include-package-data = false
 
-[tool.hatch.build.targets.wheel.hooks.cython.options]
-#includes = ["src/pylibde265/libde265/"]
-includes = []
-libraries = ["de265"]
-library_dirs = ["D:/GitHub/pylibde265/src/pylibde265/lib"]
-include_numpy = false
-include_pyarrow = false
-
-directives = { boundscheck = false, nonecheck = false, language_level = 3, binding = true }
-compile_args = []
-
-[tool.hatch.build.targets.sdist]
-exclude = [
-  "/.github",
-  "/.vscode",
-  "/trashcan",
-  "/test",
-  "/multimedia",
-]
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/pylibde265"]
-
-[tool.hatch]
-
-[tool.hatch.version]
-path = "src/pylibde265/__init__.py"
-pattern = "BUILD = 'b(?P<version>[^']+)'"
-
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [project]
 name = "pylibde265"
@@ -48,9 +21,9 @@ readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
   "loguru",
-  "cupy-cuda12x",
-  "scipy",
-  "numpy",
+  "cupy-cuda12x >= 13.2.0",
+  "scipy>=1.14.0",
+  "numpy>=2.0.0",
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -62,6 +35,9 @@ classifiers = [
 [project.optional-dependencies]
 dependencies = [
 ]
+
+[tool.setuptools.dynamic]
+version = {attr = "pylibde265.__version__"}
 
 [tool.cyright]
 

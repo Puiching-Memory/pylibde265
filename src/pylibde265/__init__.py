@@ -1,3 +1,2 @@
-
-
-BUILD = 'b0.0.1'
+#from .decode import *
+__version__ = '0.0.1a'

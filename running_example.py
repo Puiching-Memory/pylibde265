@@ -1,16 +1,20 @@
-import pylibde265.decode as decode
+#import pylibde265 as decode
+import pylibde265.pyde265
+
+print(dir(pylibde265.pyde265))
+
 import time
 import PIL.Image
 import numpy as np
 import cupy as cp 
 
-print(decode.get_version())
+print(pylibde265.pyde265.get_version())
 
 
 #vedio_path = './Kinkaku-ji.h265'
-vedio_path = './2233.hevc'
+vedio_path = r"D:\GitHub\pylibde265\multimedia\video\Kinkaku-ji.h265"
 
-dec = decode.pylibde265_decoder(10)
+dec = pylibde265.pyde265.decode_decoder(10)
 
 with open(vedio_path,'rb') as data:
     re = dec.load(data)
@@ -22,5 +26,6 @@ with open(vedio_path,'rb') as data:
         image_data = re['image']
         image_data = cp.asnumpy(image_data)
         image = PIL.Image.fromarray(image_data,mode='YCbCr')
-        image.save(f'./cache/{str(frame).zfill(9)}.jpg')
+        #image.save(f'./cache/{str(frame).zfill(9)}.jpg')
+        image.show()
         
