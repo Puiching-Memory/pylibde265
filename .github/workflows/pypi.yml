@@ -36,12 +36,17 @@ jobs:
   pypi-publish:  
     name: Upload release to PyPI  
     needs: build  # Ensure the build job completes successfully before running this job  
-    runs-on: windows-latest  
+    runs-on: ubuntu-latest  
+    strategy:  
+      matrix:  
+        python-version: ["3.8", "3.9", "3.10", "3.11"]  
+        os: [windows-latest]
+      
     steps:  
       - name: Download distribution packages  
         uses: actions/download-artifact@v4  
         with:  
-          path: dist/  
+          path: dist/pylibde265-${{ matrix.os }}-${{ matrix.python-version }}/
   
       - name: Publish package distributions to PyPI  
         uses: pypa/gh-action-pypi-publish@release/v1  
