@@ -45,8 +45,9 @@ jobs:
     steps:  
       - name: Download distribution packages  
         uses: actions/download-artifact@v4  
-        with:  
-          path: dist/pylibde265-${{ matrix.os }}-${{ matrix.python-version }}/
+        with:
+          name: pylibde265-${{ matrix.os }}-${{ matrix.python-version }}
+          path: dist/
   
       - name: Publish package distributions to PyPI  
         uses: pypa/gh-action-pypi-publish@release/v1  
