@@ -115,7 +115,7 @@ test/vis_performance.py
 1. 下载存储库 `git clone https://github.com/Puiching-Memory/pylibde265.git`
 2. 依据本地构建清单配置环境
 3. 安装编译器(Visual Studio 生成工具 2022 or Visual Studio 2022 C++开发套件)
-4. 运行 `python tools_build.py`
+4. 运行 `python -m build`
 
 环境需求-开发:
 
@@ -163,13 +163,13 @@ matplotlib >= 3.9.1
 * [ ] 流式加载数据(而不是在开始解码前完全载入)
 * [ ] 可修改的设置项
 
-# 后记
+# 致谢
 
 作者:
 
 * @梦归云帆
 
-鸣谢:
+参考:
 
 * [libde265](https://github.com/strukturag/libde265)--C/C++仓库:作者[@strukturag](https://github.com/strukturag)
 * [pyde265](https://github.com/kloppjp/pyde265)--提供linux系统的py绑定:作者[@kloppjp](https://github.com/kloppjp)
