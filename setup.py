@@ -21,9 +21,6 @@ ext_modules = [
 setup(
     name="pylibde265",
     ext_modules=cythonize(ext_modules),
-    # packages=find_packages(include=['src/pylibde265','src/pylibde265.*']),
-    # include_package_data=True,
-    # zip_safe=False,
     data_files=[
         ("", ["./libde265/build/libde265/Release/libde265.dll"]),
         ("Lib/site-packages/pylibde265", ["typing/pyde265.pyi"]),
