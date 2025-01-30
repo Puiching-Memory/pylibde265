@@ -2,14 +2,9 @@
 
 from libc.stdint cimport uint32_t,int64_t,uint8_t
 from libc.stdio cimport printf
-#from loguru import logger
-import cupy as cp
 import numpy as np
-#import dpnp as np TODO:0.14 does not support frombuffer()
-from cupyx.scipy.ndimage import zoom as cu_zoom
 from scipy.ndimage import zoom  
 import time
-#cimport pyde265
 from pylibde265 cimport pyde265
 
 def get_version():
@@ -104,8 +99,14 @@ cdef class decode_decoder(object):
             image = np.dstack((planeY,planeCb,planeCr))
             
             
-            return {'width':w,'height':h,'chroma':chroma,'bps':bps,
-                    'pts':pts,'ttd_max':ttd_max,'ttd':ttd,'image':image}
+            return {'width':w,
+                    'height':h,
+                    'chroma':chroma,
+                    'bps':bps,
+                    'pts':pts,
+                    'ttd_max':ttd_max,
+                    'ttd':ttd,
+                    'image':image}
 
         return None
 
@@ -113,11 +114,7 @@ cdef class decode_decoder(object):
         next_image = self.decode_frame()
         while next_image is not None:
             yield next_image
-            start_t = time.time()
             next_image = self.decode_frame()
-            
-            with open('./cache/all.txt','a') as file:
-                print(time.time()-start_t,file=file)
             self.free_image()
             
             

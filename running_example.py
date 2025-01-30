@@ -1,36 +1,36 @@
-#import pylibde265 as decode
 import pylibde265.pyde265
+import matplotlib.pyplot as plt
+import colour
 
 print(dir(pylibde265.pyde265))
+print(f"libde265 version: {pylibde265.pyde265.get_version()}")
 
-import time
-import PIL.Image
-import numpy as np
-import cupy as cp 
+VEDIO_PATH = r"multimedia\video\Kinkaku-ji.h265"
+NUMBER_OF_THREADS = 10
 
-print(pylibde265.pyde265.get_version())
+dec = pylibde265.pyde265.decode_decoder(NUMBER_OF_THREADS)
 
-
-#vedio_path = './Kinkaku-ji.h265'
-vedio_path = r"D:\GitHub\pylibde265\multimedia\video\Kinkaku-ji.h265"
-
-dec = pylibde265.pyde265.decode_decoder(10)
-
-with open(vedio_path,'rb') as data:
+with open(VEDIO_PATH, "rb") as data:
     re = dec.load(data)
     frame = 0
     for re in dec.decode():
-        start_t = time.time()
         frame += 1
-        #print(re['pts'])
-        #print(re['ttd'],re['ttd_max'])
-        #print(re)
-        image_data = re['image']
-        image_data = cp.asnumpy(image_data)
-        image = PIL.Image.fromarray(image_data,mode='YCbCr')
-        
-        with open('./cache/py.txt','a') as file:
-            print(time.time()-start_t,file=file)
-        #image.save(f'./cache/{str(frame).zfill(9)}.jpg')
-        #image.show()
-        
+
+        print(f"frame ------{frame}------")
+        print(f"width: {re["width"]} height: {re['height']}")
+        print(f"chroma: {re["chroma"]} bps: {re['bps']}")
+        print(f"pts: {re['pts']} ttd: {re['ttd']} ttd_max: {re['ttd_max']}")
+
+        image_martix = re["image"]
+        image_martix = colour.YCbCr_to_RGB(
+            image_martix,
+            in_bits=8,
+            in_int=True,
+            in_legal=True,
+            out_bits=8,
+            out_legal=True,
+        )
+        plt.imshow(image_martix)
+        plt.show()
+
+        break
