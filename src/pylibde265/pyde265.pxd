@@ -7,7 +7,7 @@ cdef extern from "de265.h" nogil:
     # === version numbers ===
 
     # version of linked libde265 library
-    cdef const char *de265_get_version()
+    const char *de265_get_version()
     
     # returns the version number as a BCD number.
     # 0xAABBCCDD is interpreted as version AA.BB.CC.

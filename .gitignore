@@ -9,4 +9,4 @@ libde265/
 *.whl
 .coverage
 .pytest_cache
-.\src\pylibde265\pyde265.c
+src/pylibde265/pyde265.c

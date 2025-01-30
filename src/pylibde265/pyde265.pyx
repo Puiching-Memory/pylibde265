@@ -16,7 +16,6 @@ cdef class decode_decoder(object):
     def __cinit__(self,threads:int):
         self.ctx = pyde265.de265_new_decoder()
         pyde265.de265_start_worker_threads(self.ctx,threads)
-
         pyde265.de265_set_parameter_bool(self.ctx,pyde265.de265_param.DE265_DECODER_PARAM_DISABLE_DEBLOCKING,0)
         pyde265.de265_set_parameter_bool(self.ctx,pyde265.de265_param.DE265_DECODER_PARAM_DISABLE_SAO,0)
 
@@ -42,15 +41,13 @@ cdef class decode_decoder(object):
         return dec_error
 
     def decode_frame(self):
-        
         cdef int more = 1
-        cdef const uint8_t* bufferY = <uint8_t *>0
-        cdef const uint8_t* bufferCb = <uint8_t *>0
-        cdef const uint8_t* bufferCr = <uint8_t *>0
+        cdef const uint8_t* bufferY = NULL
+        cdef const uint8_t* bufferCb = NULL
+        cdef const uint8_t* bufferCr = NULL
         cdef int outstride = 0
         
         while more > 0:
-            start_t = time.time()
             more = 0
             
             with nogil:
@@ -61,8 +58,6 @@ cdef class decode_decoder(object):
                 if image_ptr == NULL:
                     #logger.debug("Image pointer is null -> not yielding any image")
                     continue
-            with open('./cache/dec.txt','a') as file:
-                print(time.time()-start_t,file=file)
             #logger.debug('get image')
             w = pyde265.de265_get_image_width(image_ptr,0)
             h = pyde265.de265_get_image_height(image_ptr,0)
@@ -118,12 +113,9 @@ cdef class decode_decoder(object):
             self.free_image()
             
             
-        
     def free_image(self):
         pyde265.de265_release_next_picture(self.ctx)
 
-    def stop(self):
-        pass
 
     def get_PTS(self):
         pass
