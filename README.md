@@ -48,42 +48,49 @@ pip install pylibde265
 ```
 
 ```python
+"""
+to run this example, you need install pylibde265 and matplotlib and colour-science package.
+---
+here is my environment:
+matplotlib==3.10.0
+colour-science==0.4.6
+"""
+
 import pylibde265.pyde265
 import matplotlib.pyplot as plt
 import colour
+import os
 
 print(dir(pylibde265.pyde265))
 print(f"libde265 version: {pylibde265.pyde265.get_version()}")
 
-VEDIO_PATH = r"multimedia\video\Kinkaku-ji.h265"
-NUMBER_OF_THREADS = 10
+VEDIO_PATH = "./multimedia/video/Kinkaku-ji.h265"
+NUMBER_OF_THREADS = os.cpu_count()
 
-dec = pylibde265.pyde265.decode_decoder(NUMBER_OF_THREADS)
+decoder = pylibde265.pyde265.decoder(NUMBER_OF_THREADS)
 
-with open(VEDIO_PATH, "rb") as data:
-    re = dec.load(data)
-    frame = 0
-    for re in dec.decode():
-        frame += 1
+error = decoder.load(VEDIO_PATH)
+frame = 0
+for image_martix in decoder.decode():
+    frame += 1
 
-        print(f"frame ------{frame}------")
-        print(f"width: {re["width"]} height: {re['height']}")
-        print(f"chroma: {re["chroma"]} bps: {re['bps']}")
-        print(f"pts: {re['pts']} ttd: {re['ttd']} ttd_max: {re['ttd_max']}")
+    print(f"frame ------{frame}------")
+    print(f"width: {decoder.w} height: {decoder.h}")
+    print(f"chroma: {decoder.chroma} bps: {decoder.bps}")
+    print(f"pts: {decoder.pts} ttd: {decoder.ttd} ttd_max: {decoder.ttd_max}")
 
-        image_martix = re["image"]
-        image_martix = colour.YCbCr_to_RGB(
-            image_martix,
-            in_bits=8,
-            in_int=True,
-            in_legal=True,
-            out_bits=8,
-            out_legal=True,
-        )
-        plt.imshow(image_martix)
-        plt.show()
+    image_martix = colour.YCbCr_to_RGB(
+        image_martix,
+        in_bits=8,
+        in_int=True,
+        in_legal=True,
+        out_bits=8,
+        out_legal=True,
+    )
+    plt.imshow(image_martix)
+    plt.show()
 
-        break
+    break
 
 ```
 
@@ -147,18 +154,12 @@ cmake ..
 cmake --build . --config Release
 ```
 
-环境需求-测试:
+# 常见问题QA
 
-```
-matplotlib >= 3.9.1
-```
-
-# 常见问题
-
-| 问题Q        | 回答A                 | 日期     | 版本   |
-| ------------ | --------------------- | -------- | ------ |
-| 支持什么系统 | 目前只支持windows系统 | 2024.7.7 | 0.0.1a |
-| 硬件要求     | 需要nvidia显卡(cupy)  | 2024.7.7 | 0.0.1a |
+| 问题Q        | 回答A             | 日期       | 版本  |
+| ------------ | ----------------- | ---------- | ----- |
+| 支持什么系统 | 只支持windows系统 | 2025.01.31 | 0.0.2 |
+| 硬件要求     | 无                | 2025.01.31 | 0.0.2 |
 
 # 如何贡献
 
@@ -166,10 +167,8 @@ matplotlib >= 3.9.1
 
 # 路线图
 
-下一个版本:0.0.2
-
 * [ ] 帧解码性能改进
-* [ ] intel_GPU支持
+* [ ] 支持GPU处理
 * [ ] 流式加载数据(而不是在开始解码前完全载入)
 * [ ] 可修改的设置项
 

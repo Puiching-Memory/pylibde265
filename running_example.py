@@ -5,39 +5,39 @@ here is my environment:
 matplotlib==3.10.0
 colour-science==0.4.6
 """
+
 import pylibde265.pyde265
 import matplotlib.pyplot as plt
 import colour
+import os
 
 print(dir(pylibde265.pyde265))
 print(f"libde265 version: {pylibde265.pyde265.get_version()}")
 
-VEDIO_PATH = r"multimedia\video\Kinkaku-ji.h265"
-NUMBER_OF_THREADS = 10
+VEDIO_PATH = "./multimedia/video/Kinkaku-ji.h265"
+NUMBER_OF_THREADS = os.cpu_count()
 
-dec = pylibde265.pyde265.decoder(NUMBER_OF_THREADS)
+decoder = pylibde265.pyde265.decoder(NUMBER_OF_THREADS)
 
-with open(VEDIO_PATH, "rb") as data:
-    re = dec.load(data)
-    frame = 0
-    for re in dec.decode():
-        frame += 1
+error = decoder.load(VEDIO_PATH)
+frame = 0
+for image_martix in decoder.decode():
+    frame += 1
 
-        print(f"frame ------{frame}------")
-        print(f"width: {re["width"]} height: {re['height']}")
-        print(f"chroma: {re["chroma"]} bps: {re['bps']}")
-        print(f"pts: {re['pts']} ttd: {re['ttd']} ttd_max: {re['ttd_max']}")
+    print(f"frame ------{frame}------")
+    print(f"width: {decoder.w} height: {decoder.h}")
+    print(f"chroma: {decoder.chroma} bps: {decoder.bps}")
+    print(f"pts: {decoder.pts} ttd: {decoder.ttd} ttd_max: {decoder.ttd_max}")
 
-        image_martix = re["image"]
-        image_martix = colour.YCbCr_to_RGB(
-            image_martix,
-            in_bits=8,
-            in_int=True,
-            in_legal=True,
-            out_bits=8,
-            out_legal=True,
-        )
-        plt.imshow(image_martix)
-        plt.show()
+    image_martix = colour.YCbCr_to_RGB(
+        image_martix,
+        in_bits=8,
+        in_int=True,
+        in_legal=True,
+        out_bits=8,
+        out_legal=True,
+    )
+    plt.imshow(image_martix)
+    plt.show()
 
-        break
+    break
