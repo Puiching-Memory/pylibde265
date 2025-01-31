@@ -1,3 +1,10 @@
+"""
+to run this example, you need install pylibde265 and matplotlib and colour-science package.
+---
+here is my environment:
+matplotlib==3.10.0
+colour-science==0.4.6
+"""
 import pylibde265.pyde265
 import matplotlib.pyplot as plt
 import colour
@@ -8,7 +15,7 @@ print(f"libde265 version: {pylibde265.pyde265.get_version()}")
 VEDIO_PATH = r"multimedia\video\Kinkaku-ji.h265"
 NUMBER_OF_THREADS = 10
 
-dec = pylibde265.pyde265.decode_decoder(NUMBER_OF_THREADS)
+dec = pylibde265.pyde265.decoder(NUMBER_OF_THREADS)
 
 with open(VEDIO_PATH, "rb") as data:
     re = dec.load(data)

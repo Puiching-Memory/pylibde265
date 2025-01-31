@@ -10,14 +10,16 @@ from pylibde265 cimport pyde265
 def get_version():
     return pyde265.de265_get_version().decode('ascii')
 
-cdef class decode_decoder(object):
+cdef class decoder(object):
+    cdef int threads
+    cdef int buffer_size
     cdef pyde265.de265_decoder_context* ctx
 
-    def __cinit__(self,threads:int):
+    def __cinit__(self,int threads,int buffer_size=102400):
         self.ctx = pyde265.de265_new_decoder()
         pyde265.de265_start_worker_threads(self.ctx,threads)
-        pyde265.de265_set_parameter_bool(self.ctx,pyde265.de265_param.DE265_DECODER_PARAM_DISABLE_DEBLOCKING,0)
-        pyde265.de265_set_parameter_bool(self.ctx,pyde265.de265_param.DE265_DECODER_PARAM_DISABLE_SAO,0)
+
+        self.buffer_size = buffer_size
 
 
     def __dealloc__(self):
@@ -25,7 +27,7 @@ cdef class decode_decoder(object):
 
 
     def load(self,data):
-        buffer = bytearray(102400)
+        buffer = bytearray(self.buffer_size)
         cdef char* ba = buffer
         cdef int user_data = 0
         cdef int pts = 0
@@ -40,12 +42,14 @@ cdef class decode_decoder(object):
         dec_error = pyde265.de265_flush_data(self.ctx)
         return dec_error
 
-    def decode_frame(self):
+
+    cdef dict decode_frame(self):
         cdef int more = 1
         cdef const uint8_t* bufferY = NULL
         cdef const uint8_t* bufferCb = NULL
         cdef const uint8_t* bufferCr = NULL
         cdef int outstride = 0
+        cdef int w,h
         
         while more > 0:
             more = 0
@@ -105,9 +109,10 @@ cdef class decode_decoder(object):
 
         return None
 
+
     def decode(self):
         next_image = self.decode_frame()
-        while next_image is not None:
+        while next_image != None:
             yield next_image
             next_image = self.decode_frame()
             self.free_image()
@@ -115,11 +120,3 @@ cdef class decode_decoder(object):
             
     def free_image(self):
         pyde265.de265_release_next_picture(self.ctx)
-
-
-    def get_PTS(self):
-        pass
-
-
-
-

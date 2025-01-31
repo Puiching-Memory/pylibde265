@@ -7,7 +7,7 @@ cdef extern from "de265.h" nogil:
     # === version numbers ===
 
     # version of linked libde265 library
-    const char *de265_get_version()
+    cdef const char *de265_get_version()
     
     # returns the version number as a BCD number.
     # 0xAABBCCDD is interpreted as version AA.BB.CC.
@@ -15,14 +15,14 @@ cdef extern from "de265.h" nogil:
     cdef uint32_t de265_get_version_number()
     cdef int de265_get_version_number_major()
     cdef int de265_get_version_number_minor()
-    cdef de265_get_version_number_maintenance()
+    cdef int de265_get_version_number_maintenance()
 
     # === error codes ===
     ctypedef enum de265_error:
         DE265_OK = 0
         DE265_ERROR_NO_SUCH_FILE=1
-        #DE265_ERROR_NO_STARTCODE=2  obsolet
-        #DE265_ERROR_EOF=3
+        # DE265_ERROR_NO_STARTCODE=2  obsolet
+        # DE265_ERROR_EOF=3
         DE265_ERROR_COEFFICIENT_OUT_OF_IMAGE_BOUNDS=4
         DE265_ERROR_CHECKSUM_MISMATCH=5
         DE265_ERROR_CTB_OUTSIDE_IMAGE_AREA=6
@@ -41,10 +41,10 @@ cdef extern from "de265.h" nogil:
 
         # --- errors that should become obsolete in later libde265 versions ---
 
-        #DE265_ERROR_MAX_THREAD_CONTEXTS_EXCEEDED = 500 obsolet
-        #DE265_ERROR_MAX_NUMBER_OF_SLICES_EXCEEDED = 501 obsolet
+        # DE265_ERROR_MAX_THREAD_CONTEXTS_EXCEEDED = 500 obsolet
+        # DE265_ERROR_MAX_NUMBER_OF_SLICES_EXCEEDED = 501 obsolet
         DE265_ERROR_NOT_IMPLEMENTED_YET = 502
-        #DE265_ERROR_SCALING_LIST_NOT_IMPLEMENTED = 502 obsolet
+        # DE265_ERROR_SCALING_LIST_NOT_IMPLEMENTED = 502 obsolet
 
         # --- warnings ---
 
@@ -86,10 +86,9 @@ cdef extern from "de265.h" nogil:
     cdef const char* de265_get_error_text(de265_error err)
 
     # Returns true, if 'err' is DE265_OK or a warning.
-
     cdef int de265_isOK(de265_error err)
 
-    cdef void de265_disable_logging() #!DEPRECATED!
+    cdef void de265_disable_logging() # DEPRECATED
     cdef void de265_set_verbosity(int level)
 
     # === image ===
@@ -112,21 +111,20 @@ cdef extern from "de265.h" nogil:
     cdef int de265_get_image_height(const de265_image*,int channel)
     cdef de265_chroma de265_get_chroma_format(const de265_image*)
     cdef int de265_get_bits_per_pixel(const de265_image*,int channel)
-    #  The |out_stride| is returned as "bytes per line" if a non-NULL parameter is given.
+    # The |out_stride| is returned as "bytes per line" if a non-NULL parameter is given.
     cdef const uint8_t* de265_get_image_plane(const de265_image*,int channel,int* out_stride)
     cdef void* de265_get_image_plane_user_data(const de265_image*,int channel)
     cdef de265_PTS de265_get_image_PTS(const de265_image*)
     cdef void* de265_get_image_user_data(const de265_image*)
     cdef void de265_set_image_user_data(de265_image*,void* user_data)
 
-    #Get NAL-header information of this frame. You can pass in NULL pointers if you
-    #do not need this piece of information.
-
-    cdef void de265_get_image_NAL_header(   const de265_image*,
-                                            int* nal_unit_type,
-                                            const char** nal_unit_name, # textual description of 'nal_unit_type'
-                                            int* nuh_layer_id,
-                                            int* nuh_temporal_id
+    # Get NAL-header information of this frame. You can pass in NULL pointers if you
+    # do not need this piece of information.
+    cdef void de265_get_image_NAL_header(const de265_image*,
+                                        int* nal_unit_type,
+                                        const char** nal_unit_name, # textual description of 'nal_unit_type'
+                                        int* nuh_layer_id,
+                                        int* nuh_temporal_id
                                         )
     
     cdef int de265_get_image_full_range_flag(const de265_image*)
@@ -148,80 +146,80 @@ cdef extern from "de265.h" nogil:
     # Free decoder context. May only be called once on a context.
     cdef de265_error de265_free_decoder(de265_decoder_context*)
 
-    #Push more data into the decoder, must be raw h265.
-    #All complete images in the data will be decoded, hence, do not push
-    #too much data at once to prevent image buffer overflows.
-    #The end of a picture can only be detected when the succeeding start-code
-    #is read from the data.
-    #If you want to flush the data and force decoding of the data so far
-    #(e.g. at the end of a file), call de265_decode_data() with 'length' zero.
+    # Push more data into the decoder, must be raw h265.
+    # All complete images in the data will be decoded, hence, do not push
+    # too much data at once to prevent image buffer overflows.
+    # The end of a picture can only be detected when the succeeding start-code
+    # is read from the data.
+    # If you want to flush the data and force decoding of the data so far
+    # (e.g. at the end of a file), call de265_decode_data() with 'length' zero.
 
-    #NOTE: This method is deprecated and will be removed in a future version.
-    #You should use "de265_push_data" or "de265_push_NAL" and "de265_decode"
-    #instead.
+    # NOTE: This method is deprecated and will be removed in a future version.
+    # You should use "de265_push_data" or "de265_push_NAL" and "de265_decode"
+    # instead.
     cdef de265_error de265_decode_data(de265_decoder_context*,const void* data,int length)
 
-    #Push more data into the decoder, must be a raw h265 bytestream with startcodes.
-    #The PTS is assigned to all NALs whose start-code 0x000001 is contained in the data.
-    #The bytestream must contain all stuffing-bytes.
-    #This function only pushes data into the decoder, nothing will be decoded.
+    # Push more data into the decoder, must be a raw h265 bytestream with startcodes.
+    # The PTS is assigned to all NALs whose start-code 0x000001 is contained in the data.
+    # The bytestream must contain all stuffing-bytes.
+    # This function only pushes data into the decoder, nothing will be decoded.
     cdef de265_error de265_push_data(de265_decoder_context*,const void* data,int length,de265_PTS pts,void* user_data)
 
-    #Indicate that de265_push_data has just received data until the end of a NAL.
-    #The remaining pending input data is put into a NAL package and forwarded to the decoder.
+    # Indicate that de265_push_data has just received data until the end of a NAL.
+    # The remaining pending input data is put into a NAL package and forwarded to the decoder.
     cdef void de265_push_end_of_NAL(de265_decoder_context*)
 
-    #Indicate that de265_push_data has just received data until the end of a frame.
-    #All data pending at the decoder input will be pushed into the decoder and
-    #the decoded picture is pushed to the output queue.
+    # Indicate that de265_push_data has just received data until the end of a frame.
+    # All data pending at the decoder input will be pushed into the decoder and
+    # the decoded picture is pushed to the output queue.
     cdef void de265_push_end_of_frame(de265_decoder_context*)
 
-    #Push a complete NAL unit without startcode into the decoder. The data must still
-    #contain all stuffing-bytes.
-    #This function only pushes data into the decoder, nothing will be decoded.
+    # Push a complete NAL unit without startcode into the decoder. The data must still
+    # contain all stuffing-bytes.
+    # This function only pushes data into the decoder, nothing will be decoded.
     cdef de265_error de265_push_NAL(de265_decoder_context*,const void* data, int length,de265_PTS pts, void* user_data)
 
-    #Indicate the end-of-stream. All data pending at the decoder input will be
-    #pushed into the decoder and the decoded picture queue will be completely emptied.
+    # Indicate the end-of-stream. All data pending at the decoder input will be
+    # pushed into the decoder and the decoded picture queue will be completely emptied.
     cdef de265_error de265_flush_data(de265_decoder_context*)
 
-    #Return number of bytes pending at the decoder input.
-    #Can be used to avoid overflowing the decoder with too much data.
+    # Return number of bytes pending at the decoder input.
+    # Can be used to avoid overflowing the decoder with too much data.
     cdef int de265_get_number_of_input_bytes_pending(de265_decoder_context*)
 
-    #Return number of NAL units pending at the decoder input.
-    #Can be used to avoid overflowing the decoder with too much data.
+    # Return number of NAL units pending at the decoder input.
+    # Can be used to avoid overflowing the decoder with too much data.
     cdef int de265_get_number_of_NAL_units_pending(de265_decoder_context*)
 
-    #Do some decoding. Returns status whether it did perform some decoding or
-    #why it could not do so. If 'more' is non-null, indicates whether de265_decode()
-    #should be called again (possibly after resolving the indicated problem).
-    #DE265_OK - decoding ok
-    #DE265_ERROR_IMAGE_BUFFER_FULL - DPB full, extract some images before continuing
-    #DE265_ERROR_WAITING_FOR_INPUT_DATA - insert more data before continuing
+    # Do some decoding. Returns status whether it did perform some decoding or
+    # why it could not do so. If 'more' is non-null, indicates whether de265_decode()
+    # should be called again (possibly after resolving the indicated problem).
+    # DE265_OK - decoding ok
+    # DE265_ERROR_IMAGE_BUFFER_FULL - DPB full, extract some images before continuing
+    # DE265_ERROR_WAITING_FOR_INPUT_DATA - insert more data before continuing
 
-    #You have to consider these cases:
-    #- decoding successful   -> err  = DE265_OK, more=true
-    #- decoding stalled      -> err != DE265_OK, more=true
-    #- decoding finished     -> err  = DE265_OK, more=false
-    #- unresolvable error    -> err != DE265_OK, more=false
+    # You have to consider these cases:
+    # - decoding successful   -> err  = DE265_OK, more=true
+    # - decoding stalled      -> err != DE265_OK, more=true
+    # - decoding finished     -> err  = DE265_OK, more=false
+    # - unresolvable error    -> err != DE265_OK, more=false
     cdef de265_error de265_decode(de265_decoder_context*, int* more)
 
-    #Clear decoder state. Call this when skipping in the stream.
+    # Clear decoder state. Call this when skipping in the stream.
     cdef void de265_reset(de265_decoder_context*)
 
-    #Return next decoded picture, if there is any. If no complete picture has been
-    #decoded yet, NULL is returned. You should call de265_release_next_picture() to
-    #advance to the next picture.
-    cdef const de265_image* de265_peek_next_picture(de265_decoder_context*) #may return NULL
+    # Return next decoded picture, if there is any. If no complete picture has been
+    # decoded yet, NULL is returned. You should call de265_release_next_picture() to
+    # advance to the next picture.
+    cdef const de265_image* de265_peek_next_picture(de265_decoder_context*) # may return NULL
 
-    #Get next decoded picture and remove this picture from the decoder output queue.
-    #Returns NULL is there is no decoded picture ready.
-    #You can use the picture only until you call any other de265_* function.
-    cdef const de265_image* de265_get_next_picture(de265_decoder_context*) #// may return NULL
+    # Get next decoded picture and remove this picture from the decoder output queue.
+    # Returns NULL is there is no decoded picture ready.
+    # You can use the picture only until you call any other de265_* function.
+    cdef const de265_image* de265_get_next_picture(de265_decoder_context*) # may return NULL
 
-    #Release the current decoded picture for reuse in the decoder. You should not
-    #use the data anymore after calling this function.
+    # Release the current decoded picture for reuse in the decoder. You should not
+    # use the data anymore after calling this function.
     cdef void de265_release_next_picture(de265_decoder_context*)
 
     cdef de265_error de265_get_warning(de265_decoder_context*)
@@ -239,7 +237,6 @@ cdef extern from "de265.h" nogil:
         int alignment
 
         # conformance window
-
         int crop_left
         int crop_right
         int crop_top
@@ -259,9 +256,9 @@ cdef extern from "de265.h" nogil:
                                 void* userdata
                             )
 
-    #The user data pointer will be given to the get_buffer() and release_buffer() functions
-    #in de265_image_allocation.
-    cdef void de265_set_image_allocation_functions( de265_decoder_context*,
+    # The user data pointer will be given to the get_buffer() and release_buffer() functions
+    # in de265_image_allocation.
+    cdef void de265_set_image_allocation_functions(de265_decoder_context*,
                                                     de265_image_allocation*,
                                                     void* userdata
                                                     )
@@ -269,21 +266,21 @@ cdef extern from "de265.h" nogil:
     cdef void de265_set_image_plane(de265_image* img, int cIdx, void* mem, int stride, void *userdata)
 
     # --- frame dropping API ---
-    #To limit decoding to a maximum temporal layer (TID), use de265_set_limit_TID().
-    #The maximum layer ID in the stream can be queried with de265_get_highest_TID().
-    #Note that the maximum layer ID can change throughout the stream.
+    # To limit decoding to a maximum temporal layer (TID), use de265_set_limit_TID().
+    # The maximum layer ID in the stream can be queried with de265_get_highest_TID().
+    # Note that the maximum layer ID can change throughout the stream.
 
-    #For a fine-grained selection of the frame-rate, use de265_set_framerate_ratio().
-    #A percentage of 100% will decode all frames in all temporal layers. A lower percentage
-    #will drop approximately as many frames. Note that this only accurate if the frames
-    #are distributed evenly among the layers. Otherwise, the mapping is non-linear.
+    # For a fine-grained selection of the frame-rate, use de265_set_framerate_ratio().
+    # A percentage of 100% will decode all frames in all temporal layers. A lower percentage
+    # will drop approximately as many frames. Note that this only accurate if the frames
+    # are distributed evenly among the layers. Otherwise, the mapping is non-linear.
 
-    #The limit_TID has a higher precedence than framerate_ratio. Hence, setting a higher
-    #framerate-ratio will decode at limit_TID without dropping.
+    # The limit_TID has a higher precedence than framerate_ratio. Hence, setting a higher
+    # framerate-ratio will decode at limit_TID without dropping.
 
-    #With change_framerate(), the output frame-rate can be increased/decreased to some
-    #discrete preferable values. Currently, these are non-dropped decoding at various
-    #TID layers.
+    # With change_framerate(), the output frame-rate can be increased/decreased to some
+    # discrete preferable values. Currently, these are non-dropped decoding at various
+    # TID layers.
 
     cdef int de265_get_highest_TID(de265_decoder_context*) # highest temporal substream to decode
     cdef int de265_get_current_TID(de265_decoder_context*) # currently decoded temporal substream
@@ -329,16 +326,16 @@ cdef extern from "de265.h" nogil:
 
     # --- optional library initialization ---
 
-    #Static library initialization. Must be paired with de265_free().
-    #Initialization is optional, since it will be done implicitly in de265_new_decoder().
-    #Return value is false if initialization failed.
-    #Only call de265_free() when initialization was successful.
-    #Multiple calls to 'init' are allowed, but must be matched with an equal number of 'free' calls.
+    # Static library initialization. Must be paired with de265_free().
+    # Initialization is optional, since it will be done implicitly in de265_new_decoder().
+    # Return value is false if initialization failed.
+    # Only call de265_free() when initialization was successful.
+    # Multiple calls to 'init' are allowed, but must be matched with an equal number of 'free' calls.
     cdef de265_error de265_init()
 
-    #Free global library data.
-    #An implicit free call is made in de265_free_decoder().
-    #Returns false if library was not initialized before, or if 'free' was called
-    #more often than 'init'. 
+    # Free global library data.
+    # An implicit free call is made in de265_free_decoder().
+    # Returns false if library was not initialized before, or if 'free' was called
+    # more often than 'init'. 
     cdef de265_error de265_free()
     
