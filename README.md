@@ -98,7 +98,7 @@ for image_martix in decoder.decode():
 
 ```
 
-![example_preview.png](multimedia\image\example.png)
+![example_preview.png](./multimedia/image/example.png)
 
 代码解释:
 
