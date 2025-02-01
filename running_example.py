@@ -10,6 +10,10 @@ import pylibde265.pyde265
 import matplotlib.pyplot as plt
 import colour
 import os
+from pyinstrument import Profiler
+
+profiler = Profiler()
+profiler.start()
 
 print(dir(pylibde265.pyde265))
 print(f"libde265 version: {pylibde265.pyde265.get_version()}")
@@ -41,3 +45,6 @@ for image_martix in decoder.decode():
     plt.show()
 
     break
+
+profiler.stop()
+print(profiler.output_text(unicode=True, color=True))

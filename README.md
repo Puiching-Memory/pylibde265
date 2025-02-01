@@ -39,7 +39,11 @@ Decode HEVC(H.265) video in python
 
 libde265负责将HEVC编码的视频流解码至原始比特流，此类文件通常以.265或.hevc作为后缀名。
 
-*目前版本中，不支持直接解码.mp4文件，你需要手动分离视频文件的视频部分，可以使用如ffmpeg的多媒体工具。
+目前版本中，不支持直接解码.mp4文件，你需要手动分离视频文件的视频部分。
+
+要想从MP4中提取h265流，你可以使用：ffmpeg,gpac(mp4box),Bento4
+
+~~但是你都使用了这些框架了，那其实解码h265他们也能做~~
 
 # 快速开始
 
@@ -93,6 +97,8 @@ for image_martix in decoder.decode():
     break
 
 ```
+
+![example_preview.png](multimedia\image\example.png)
 
 代码解释:
 

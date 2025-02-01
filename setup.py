@@ -1,6 +1,7 @@
 from setuptools import setup, Extension, find_packages
 import os
 import shutil
+import numpy as np
 
 from Cython.Build import cythonize
 from Cython.Distutils import build_ext
@@ -12,6 +13,7 @@ ext_modules = [
         include_dirs=[
             "./libde265/build/",
             "./libde265/libde265/",
+            np.get_include()
         ],
         library_dirs=["./libde265/build/libde265/Release/"],
         libraries=["de265"],
