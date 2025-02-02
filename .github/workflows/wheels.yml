@@ -27,7 +27,7 @@ jobs:
           mkdir build &&
           cd build &&
           cmake .. &&
-          cmake --build . --config Release -- /MP &&
+          cmake --build . --config Release &&
           cd .. &&
           cd .. &&
           python -m build
