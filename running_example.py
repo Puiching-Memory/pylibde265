@@ -41,8 +41,8 @@ for image_martix in decoder.decode():
         out_bits=8,
         out_legal=True,
     )
-    plt.imshow(image_martix)
-    plt.show()
+    #plt.imshow(image_martix)
+    #plt.show()
 
     break
 

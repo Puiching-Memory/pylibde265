@@ -338,4 +338,3 @@ cdef extern from "de265.h" nogil:
     # Returns false if library was not initialized before, or if 'free' was called
     # more often than 'init'. 
     cdef de265_error de265_free()
-    

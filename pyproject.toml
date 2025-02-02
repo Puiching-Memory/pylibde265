@@ -10,13 +10,12 @@ where = ["src"]
 
 [project]
 name = "pylibde265"
-#version = "0.0.1"
 dynamic = ["version"]
 authors = [
   { name="梦归云帆", email="1138663075@qq.com" },
 ]
-description = "python binding implementation of libde265, based on cython"
-keywords = ["libde265", "h265", "vedio", "decode", "mp4"]
+description = "Decode HEVC(H.265) video in python"
+keywords = ["libde265", "h265", "vedio", "decode", "mp4", "hevc", "python"]
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [

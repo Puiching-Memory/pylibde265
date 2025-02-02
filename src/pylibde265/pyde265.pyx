@@ -1,5 +1,3 @@
-# cython:language_level=3
-
 from libc.stdint cimport uint32_t,int64_t,uint8_t
 from libc.stdio cimport printf
 import numpy as np
@@ -48,12 +46,14 @@ cdef class decoder(object):
 
         return dec_error
 
-    cdef decode_frame(self):
+    cdef cnp.ndarray decode_frame(self):
         cdef int more = 1
         cdef const uint8_t* bufferY = NULL
         cdef const uint8_t* bufferCb = NULL
         cdef const uint8_t* bufferCr = NULL
-        cdef int outstride = 0
+        cdef int ystride = 0, cstride = 0
+        cdef cnp.ndarray image
+        cdef int i, j
         
         while more > 0:
             more = 0
@@ -88,17 +88,20 @@ cdef class decoder(object):
                 else: # chroma==0
                     raise ValueError(f"unsupport chroma format:{self.chroma}")
            
-                bufferY = pyde265.de265_get_image_plane(image_ptr,0,&outstride)
-                bufferCb = pyde265.de265_get_image_plane(image_ptr,1,&outstride)
-                bufferCr = pyde265.de265_get_image_plane(image_ptr,2,&outstride)
-
+                bufferY = pyde265.de265_get_image_plane(image_ptr,0,&ystride)
+                bufferCb = pyde265.de265_get_image_plane(image_ptr,1,&cstride)
+                bufferCr = pyde265.de265_get_image_plane(image_ptr,2,&cstride)
+            
             planeY = np.frombuffer(bufferY[0:self.h*self.w], dtype='uint8').reshape((self.h, self.w))  
             planeCb = np.frombuffer(bufferCb[0:self.hC*self.wC], dtype='uint8').reshape((self.hC, self.wC)) 
             planeCb = zoom(planeCb,(self.w//self.wC,self.h//self.hC),order=0)    
             planeCr = np.frombuffer(bufferCr[0:self.hC*self.wC], dtype='uint8').reshape((self.hC, self.wC))
             planeCr = zoom(planeCr,(self.w//self.wC,self.h//self.hC),order=0)
 
-            image = np.dstack((planeY,planeCb,planeCr))
+            image = np.empty((self.h, self.w, 3), dtype=np.uint8)
+            image[:, :, 0] = planeY
+            image[:, :, 1] = planeCb
+            image[:, :, 2] = planeCr
             
             return image
 
