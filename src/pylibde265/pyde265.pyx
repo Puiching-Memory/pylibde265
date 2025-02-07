@@ -3,12 +3,12 @@ from libc.stdio cimport printf
 from cython.parallel import prange
 import numpy as np
 cimport numpy as cnp
-from scipy.ndimage import zoom  
+# from scipy.ndimage import zoom  
 from pylibde265 cimport pyde265
 
 def get_version():
     return pyde265.de265_get_version().decode('ascii')
-
+        
 cdef class decoder(object):
     cdef int threads
     cdef int buffer_size
@@ -56,7 +56,7 @@ cdef class decoder(object):
         cdef cnp.ndarray image
         cdef unsigned char[:, :, ::1] image_view
         cdef int i, j
-        
+
         while more > 0:
             more = 0
             
@@ -95,20 +95,18 @@ cdef class decoder(object):
                 bufferCr = pyde265.de265_get_image_plane(image_ptr,2,&cstride)
             
             image = np.empty((self.h, self.w, 3), dtype=np.uint8)
-            image_view = image
 
-            for i in prange(self.h, nogil=True,schedule='guided'):
-                for j in range(self.w):
-                    image_view[i, j, 0] = bufferY[i * ystride + j]
-
-            # planeY = np.frombuffer(bufferY[0:self.h*self.w], dtype='uint8').reshape((self.h, self.w))  
-            planeCb = np.frombuffer(bufferCb[0:self.hC*self.wC], dtype='uint8').reshape((self.hC, self.wC)) 
-            planeCb = zoom(planeCb,(self.w//self.wC,self.h//self.hC),order=0)    
+            planeY = np.frombuffer(bufferY[0:self.h*self.w], dtype='uint8').reshape((self.h, self.w))  
+            planeCb = np.frombuffer(bufferCb[0:self.hC*self.wC], dtype='uint8').reshape((self.hC, self.wC))
             planeCr = np.frombuffer(bufferCr[0:self.hC*self.wC], dtype='uint8').reshape((self.hC, self.wC))
-            planeCr = zoom(planeCr,(self.w//self.wC,self.h//self.hC),order=0)
+            
+            #planeCb = zoom(planeCb,(self.w//self.wC,self.h//self.hC),order=0)
+            #planeCr = zoom(planeCr,(self.w//self.wC,self.h//self.hC),order=0)
 
+            planeCb = planeCb.repeat(self.w // self.wC, axis=1).repeat(self.h // self.hC, axis=0)
+            planeCr = planeCr.repeat(self.w // self.wC, axis=1).repeat(self.h // self.hC, axis=0)
 
-            # image[:, :, 0] = planeY
+            image[:, :, 0] = planeY
             image[:, :, 1] = planeCb
             image[:, :, 2] = planeCr
             
