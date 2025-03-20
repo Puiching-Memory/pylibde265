@@ -4,7 +4,6 @@ __pycache__/
 dist/
 trashcan/
 cache/
-libde265/
 *.egg-info
 *.whl
 *.html

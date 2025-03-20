@@ -145,19 +145,18 @@ test/vis_performance.py
 
 1. 克隆存储库 `git clone https://github.com/Puiching-Memory/pylibde265.git`
 2. 安装编译器(Visual Studio 生成工具 2022 or Visual Studio 2022 C++开发套件)
-3. 运行 `python -m build`
-
-环境需求-开发:
+3. 构建libde265
 
 ```
 pip install -r requirements_dev.txt
-git clone https://github.com/strukturag/libde265.git
 cd libde265
 mkdir build
 cd build
 cmake ..
 cmake --build . --config Release
 ```
+
+4. 构建pylibde265 `python -m build`
 
 # 常见问题QA
 
@@ -173,7 +172,7 @@ cmake --build . --config Release
 # 路线图
 
 * [ ] 帧解码性能改进
-* [ ] 支持GPU处理
+* [ ] 解复用器
 * [ ] 流式加载数据(而不是在开始解码前完全载入)
 * [ ] 可修改的设置项
 
