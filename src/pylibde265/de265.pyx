@@ -4,27 +4,27 @@ from cython.parallel import prange
 import numpy as np
 cimport numpy as cnp
 # from scipy.ndimage import zoom  
-from pylibde265 cimport pyde265
+from pylibde265 cimport de265
 
 def get_version():
-    return pyde265.de265_get_version().decode('ascii')
+    return de265.de265_get_version().decode('ascii')
         
 cdef class decoder(object):
     cdef int threads
     cdef int buffer_size
-    cdef pyde265.de265_decoder_context* ctx
+    cdef de265.de265_decoder_context* ctx
     cdef readonly int w,h,chroma,bps,pts,ttd_max,ttd
     cdef readonly int wC,hC
 
     def __cinit__(self,int threads,int buffer_size=102400):
-        self.ctx = pyde265.de265_new_decoder()
-        pyde265.de265_start_worker_threads(self.ctx,threads)
+        self.ctx = de265.de265_new_decoder()
+        de265.de265_start_worker_threads(self.ctx,threads)
 
     def __init__(self,int threads,int buffer_size=102400):
         self.buffer_size = buffer_size
 
     def __dealloc__(self):
-        pyde265.de265_free_decoder(self.ctx)
+        de265.de265_free_decoder(self.ctx)
 
     def load(self,str vedio_path):
         buffer = bytearray(self.buffer_size)
@@ -37,12 +37,12 @@ cdef class decoder(object):
         bytes_read = data.readinto(buffer)
 
         while bytes_read > 0:
-            dec_error = pyde265.de265_push_data(self.ctx, ba, bytes_read, pts, &user_data)
+            dec_error = de265.de265_push_data(self.ctx, ba, bytes_read, pts, &user_data)
             # print([dec_error,bytes_read])
             pts += bytes_read
             bytes_read = data.readinto(buffer)
 
-        dec_error = pyde265.de265_flush_data(self.ctx)
+        dec_error = de265.de265_flush_data(self.ctx)
         data.close()
 
         return dec_error
@@ -61,22 +61,22 @@ cdef class decoder(object):
             more = 0
             
             with nogil:
-                dec_error = pyde265.de265_decode(self.ctx, &more)
+                dec_error = de265.de265_decode(self.ctx, &more)
                 # print(f'decode:{dec_error},more?{more}')
-                image_ptr = pyde265.de265_get_next_picture(self.ctx)
+                image_ptr = de265.de265_get_next_picture(self.ctx)
 
                 if image_ptr == NULL:
                     # print("Image pointer is null -> not yielding any image")
                     continue
                     
                 # print('get image')
-                self.w = pyde265.de265_get_image_width(image_ptr,0)
-                self.h = pyde265.de265_get_image_height(image_ptr,0)
-                self.chroma = pyde265.de265_get_chroma_format(image_ptr)
-                self.bps = pyde265.de265_get_bits_per_pixel(image_ptr,0)
-                self.pts = pyde265.de265_get_image_PTS(image_ptr)
-                self.ttd_max = pyde265.de265_get_highest_TID(self.ctx)
-                self.ttd =  pyde265.de265_get_current_TID(self.ctx)
+                self.w = de265.de265_get_image_width(image_ptr,0)
+                self.h = de265.de265_get_image_height(image_ptr,0)
+                self.chroma = de265.de265_get_chroma_format(image_ptr)
+                self.bps = de265.de265_get_bits_per_pixel(image_ptr,0)
+                self.pts = de265.de265_get_image_PTS(image_ptr)
+                self.ttd_max = de265.de265_get_highest_TID(self.ctx)
+                self.ttd =  de265.de265_get_current_TID(self.ctx)
                 
                 if self.chroma == 1: # 4:2:0
                     self.wC = self.w // 2
@@ -90,9 +90,9 @@ cdef class decoder(object):
                 else: # chroma==0
                     raise ValueError(f"unsupport chroma format:{self.chroma}")
            
-                bufferY = pyde265.de265_get_image_plane(image_ptr,0,&ystride)
-                bufferCb = pyde265.de265_get_image_plane(image_ptr,1,&cstride)
-                bufferCr = pyde265.de265_get_image_plane(image_ptr,2,&cstride)
+                bufferY = de265.de265_get_image_plane(image_ptr,0,&ystride)
+                bufferCb = de265.de265_get_image_plane(image_ptr,1,&cstride)
+                bufferCr = de265.de265_get_image_plane(image_ptr,2,&cstride)
             
             image = np.empty((self.h, self.w, 3), dtype=np.uint8)
 
@@ -122,5 +122,5 @@ cdef class decoder(object):
             self.free_image()
                  
     def free_image(self):
-        pyde265.de265_release_next_picture(self.ctx)
+        de265.de265_release_next_picture(self.ctx)
 

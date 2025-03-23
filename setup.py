@@ -8,12 +8,36 @@ from Cython.Distutils import build_ext
 
 ext_modules = [
     Extension(
-        "pylibde265.pyde265",
-        sources=["./src/pylibde265/pyde265.pyx"],
-        include_dirs=["./libde265/build/", "./libde265/libde265/", np.get_include()],
+        "pylibde265.de265",
+        sources=["./src/pylibde265/de265.pyx"],
+        include_dirs=[
+            "./libde265/build/",
+            "./libde265/libde265/",
+            np.get_include(),
+        ],
         library_dirs=["./libde265/build/libde265/Release/"],
         libraries=["de265"],
-        extra_compile_args=["/openmp"],  # only for Windows
+        extra_compile_args=[
+            "/openmp",
+            # "/showIncludes"
+        ],  # only for Windows MSVC
+    ),
+    Extension(
+        "pylibde265.visualize",
+        sources=["./src/pylibde265/visualize.pyx"],
+        include_dirs=[
+            "./libde265/build/",
+            "./libde265/",
+            "./libde265/libde265/",
+            np.get_include(),
+        ],
+        library_dirs=["./libde265/build/libde265/Release/"],
+        libraries=["de265"],
+        extra_compile_args=[
+            "/openmp",
+            # "/showIncludes"
+        ],  # only for Windows MSVC
+        language='c++',
     ),
 ]
 
