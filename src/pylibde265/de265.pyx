@@ -4,18 +4,19 @@ from cython.parallel import prange
 import numpy as np
 cimport numpy as cnp
 # from scipy.ndimage import zoom  
+from typing import Union
 from pylibde265 cimport de265
 
-def get_version()->str:
+def get_version() -> str:
     return de265.de265_get_version().decode('ascii')
 
-def get_error_text(err_number:int)->str:
+def get_error_text(err_number: int) -> str:
     return de265.de265_get_error_text(err_number).decode('ascii')
 
-def isOk(err_number:int)->bool:
+def isOk(err_number: int) -> bool:
     return de265.de265_isOK(err_number)
 
-def set_verbosity(level:int)->None:
+def set_verbosity(level: int) -> None:
     de265.de265_set_verbosity(level)
 
         
@@ -23,7 +24,7 @@ cdef class decoder(object):
     cdef int threads
     cdef int buffer_size
     cdef de265.de265_decoder_context* ctx
-    cdef readonly int w,h,chroma,bps,pts,ttd_max,ttd
+    cdef readonly int w,h,chroma,bps,pts,matrix_coeff
     cdef readonly int wC,hC
 
     def __cinit__(self,int threads,int buffer_size=102400):
@@ -85,8 +86,7 @@ cdef class decoder(object):
                 self.chroma = de265.de265_get_chroma_format(image_ptr)
                 self.bps = de265.de265_get_bits_per_pixel(image_ptr,0)
                 self.pts = de265.de265_get_image_PTS(image_ptr)
-                self.ttd_max = de265.de265_get_highest_TID(self.ctx)
-                self.ttd =  de265.de265_get_current_TID(self.ctx)
+                self.matrix_coeff = de265.de265_get_image_matrix_coefficients(image_ptr)
                 
                 if self.chroma == 1: # 4:2:0
                     self.wC = self.w // 2
@@ -134,3 +134,28 @@ cdef class decoder(object):
     def free_image(self):
         de265.de265_release_next_picture(self.ctx)
 
+    def get_highest_TID(self) -> int:
+        return de265.de265_get_highest_TID(self.ctx)
+
+    def get_current_TID(self) -> int:
+        return de265.de265_get_current_TID(self.ctx)
+
+    def set_limit_TID(self, ttd: int):
+        de265.de265_set_limit_TID(self.ctx,ttd)
+
+    def set_framerate_ratio(self, percent: int):
+        # 0 ~ 100 (%)
+        de265.de265_set_framerate_ratio(self.ctx, percent)
+
+    def change_framerate(self, more_vs_less: int) -> int:
+        # 1: more, -1: less
+        return de265.de265_change_framerate(self.ctx, more_vs_less)
+
+    def set_parameter(self, param: int, value: Union[int, bool]):
+        if type(value) == bool:
+            de265.de265_set_parameter_bool(self.ctx, param, value)
+        elif type(value) == int:
+            de265.de265_set_parameter_int(self.ctx, param, value)
+
+    def get_parameter(self, param: int) -> bool:
+        return bool(de265.de265_get_parameter_bool(self.ctx, param))

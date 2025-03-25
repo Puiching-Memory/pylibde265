@@ -46,6 +46,6 @@ setup(
     ext_modules=cythonize(ext_modules, nthreads=os.cpu_count(), annotate=True),
     data_files=[
         ("", ["./libde265/build/libde265/Release/libde265.dll"]),
-        ("Lib/site-packages/pylibde265", ["typing/pyde265.pyi"]),
+        ("Lib/site-packages/pylibde265", ["typing/de265.pyi"]),
     ],
 )
