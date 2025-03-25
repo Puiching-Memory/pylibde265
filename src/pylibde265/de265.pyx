@@ -6,8 +6,18 @@ cimport numpy as cnp
 # from scipy.ndimage import zoom  
 from pylibde265 cimport de265
 
-def get_version():
+def get_version()->str:
     return de265.de265_get_version().decode('ascii')
+
+def get_error_text(err_number:int)->str:
+    return de265.de265_get_error_text(err_number).decode('ascii')
+
+def isOk(err_number:int)->bool:
+    return de265.de265_isOK(err_number)
+
+def set_verbosity(level:int)->None:
+    de265.de265_set_verbosity(level)
+
         
 cdef class decoder(object):
     cdef int threads

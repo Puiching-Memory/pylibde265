@@ -11,3 +11,4 @@ cache/
 .pytest_cache
 src/pylibde265/pyde265.c
 *.c
+*.cpp
