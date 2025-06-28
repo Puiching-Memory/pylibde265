@@ -1,13 +1,13 @@
 # must be installed
-setuptools==77.0.1
+setuptools==80.9.0
 wheel==0.45.1
-cython==3.1.0a1
-build==1.2.2
-cmake==3.31.6
+cython==3.1.2
+build==1.2.2.post1
+cmake==4.0.3
 
-# for Syntax prompt
+# for syntax highlighting
 numpy>=2.0.0
 scipy>=1.14.0
 
 # optional dependencies
-pyinstrument==5.0.1
+pyinstrument==5.0.2
