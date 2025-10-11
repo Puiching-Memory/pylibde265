@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools==80.9.0", "wheel==0.45.1","cython==3.1.2","numpy>=2.0.0"]
+requires = ["setuptools==80.9.0", "wheel==0.46.1","cython==3.1.4","numpy>=2.0.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
@@ -15,7 +15,7 @@ authors = [
   { name="梦归云帆", email="1138663075@qq.com" },
 ]
 description = "Decode HEVC(H.265) video in python"
-keywords = ["libde265", "h265", "vedio", "decode", "mp4", "hevc", "python"]
+keywords = ["libde265", "h265", "video", "decode", "mp4", "hevc", "python"]
 readme = "README.md"
 license = "GPL-3.0-or-later"
 requires-python = ">=3.9"
