@@ -164,12 +164,26 @@ test/vis_performance.py
 
 # 从源代码构建
 
+## 使用 uv (推荐)
+
 1. 克隆存储库 `git clone https://github.com/Puiching-Memory/pylibde265.git`
 2. 安装编译器(Visual Studio 生成工具 2022 or Visual Studio 2022 C++开发套件)
-3. 构建libde265
+3. 创建虚拟环境并安装依赖
 
+```bash
+# 创建虚拟环境
+uv venv
+
+# 激活虚拟环境
+.venv\Scripts\activate
+
+# 安装依赖
+uv pip install -e ".[dev]"
 ```
-pip install -r requirements_dev.txt
+
+4. 构建libde265
+
+```bash
 cd libde265
 mkdir build
 cd build
@@ -177,7 +191,7 @@ cmake ..
 cmake --build . --config Release
 ```
 
-4. 构建pylibde265 `python -m build`
+5. 构建pylibde265 `uv run python -m build`
 
 # 常见问题QA
 

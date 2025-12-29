@@ -1,14 +1,56 @@
-build/
+# Python
 __pycache__/
-.vscode/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
 dist/
-trashcan/
-cache/
-*.egg-info
+build/
 *.whl
-*.html
-.coverage
-.pytest_cache
-src/pylibde265/pyde265.c
+
+# Virtual Environments
+venv/
+env/
+.venv/
+.env/
+
+# uv
+.uv/
+uv.lock
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.o
+*.obj
+*.lib
+*.dll
+*.exe
+*.pyd
+*.pdb
+
+# Cython
 *.c
 *.cpp
+*.html
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Test
+.pytest_cache/
+.coverage
+htmlcov/
