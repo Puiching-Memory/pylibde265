@@ -26,7 +26,6 @@ classifiers = [
 
 [project.optional-dependencies]
 dev = [
-  "pyinstrument>=5.0.0",
   "pybind11>=2.12.0",
   "cmake>=4.2.0",
   "build>=1.2.0",
@@ -36,6 +35,7 @@ dev = [
 cmake.version = ">=3.15"
 build.verbose = true
 wheel.packages = ["src/pylibde265"]
+sdist.include = ["src/pylibde265", "libde265"]
 
 [tool.cibuildwheel]
 build = "cp39-* cp310-* cp311-* cp312-* cp313-* cp314-*"
@@ -51,8 +51,6 @@ Homepage = "https://github.com/Puiching-Memory/pylibde265"
 Issues = "https://github.com/Puiching-Memory/pylibde265/issues"
 
 [dependency-groups]
-dev = [
-  "pyinstrument>=5.0.0",
-]
+dev = []
 
 [tool.uv.sources]
