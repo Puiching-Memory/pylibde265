@@ -1,43 +1,45 @@
-name: Build  
-  
-on: [push, pull_request]  
-  
+name: Build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
 jobs:
-  build:
-    name: Build wheels with cibuildwheel
-    runs-on: windows-latest
+  build_wheels:
+    name: Build wheels on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.14"
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v4
-        with:
-          enable-cache: true
-
-      - name: Install build tooling
-        run: uv pip install --system build cibuildwheel
-
       - name: Build wheels
-        env:
-          CIBW_BUILD: "cp39-win_amd64 cp310-win_amd64 cp311-win_amd64 cp312-win_amd64 cp313-win_amd64 cp314-win_amd64"
-          CIBW_BEFORE_ALL_WINDOWS: >
-            cmake -S libde265 -B libde265/build &&
-            cmake --build libde265/build --config Release
-        run: python -m cibuildwheel --output-dir dist
+        uses: pypa/cibuildwheel@v2.22.0
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cibw-wheels-${{ matrix.os }}-${{ strategy.job-index }}
+          path: ./wheelhouse/*.whl
+
+  build_sdist:
+    name: Build sdist
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Build sdist
-        run: python -m build --sdist --outdir dist
+        run: pipx run build --sdist
 
-      - name: Store the distribution packages
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
-          name: pylibde265-windows
-          path: dist/
+          name: cibw-sdist
+          path: dist/*.tar.gz

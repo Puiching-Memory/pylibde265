@@ -38,11 +38,6 @@ Thumbs.db
 *.pyd
 *.pdb
 
-# Cython
-*.c
-*.cpp
-*.html
-
 # CMake
 CMakeCache.txt
 CMakeFiles/
@@ -51,5 +46,7 @@ Makefile
 
 # Test
 .pytest_cache/
+.mypy_cache/
 .coverage
 htmlcov/
+cache/

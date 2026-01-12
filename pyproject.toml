@@ -1,16 +1,10 @@
 [build-system]
-requires = ["setuptools>=80.9.0", "wheel", "cython>=3.1.4", "numpy>=2.0.0"]
-build-backend = "setuptools.build_meta"
-
-[tool.setuptools]
-include-package-data = false
-
-[tool.setuptools.packages.find]
-where = ["src"]
+requires = ["scikit-build-core>=0.10.0", "pybind11>=2.12.0", "numpy>=2.0.0"]
+build-backend = "scikit_build_core.build"
 
 [project]
 name = "pylibde265"
-dynamic = ["version"]
+version = "0.1.0"
 authors = [
   { name="梦归云帆", email="1138663075@qq.com" },
 ]
@@ -20,25 +14,37 @@ readme = "README.md"
 license = {text = "GPL-3.0-or-later"}
 requires-python = ">=3.9"
 dependencies = [
-  "scipy>=1.13.0",
   "numpy>=2.0.0",
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Programming Language :: Cython",
+    "Programming Language :: C++",
     "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
 ]
 
 [project.optional-dependencies]
 dev = [
   "pyinstrument>=5.0.0",
-  "cython>=3.1.4",
+  "pybind11>=2.12.0",
   "cmake>=4.2.0",
   "build>=1.2.0",
 ]
 
-[tool.setuptools.dynamic]
-version = {attr = "pylibde265.__version__"}
+[tool.scikit-build]
+cmake.version = ">=3.15"
+build.verbose = true
+wheel.packages = ["src/pylibde265"]
+
+[tool.cibuildwheel]
+build = "cp39-* cp310-* cp311-* cp312-* cp313-* cp314-*"
+skip = "*-win32 *-manylinux_i686 *-musllinux_*"
+test-command = "python {project}/test/test_func.py"
+test-requires = ["scipy", "numpy", "matplotlib"]
+
+[tool.cibuildwheel.macos]
+archs = "x86_64 arm64"
 
 [project.urls]
 Homepage = "https://github.com/Puiching-Memory/pylibde265"
