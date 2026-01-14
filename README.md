@@ -34,7 +34,7 @@ Decode HEVC(H.265) video in python
 # 概念
 
 <div>
-  <a href=""><img src="./multimedia/image/vedio_steam.jpg" alt="image:vedio_steam"></a>
+  <a href=""><img src="./multimedia/image/vedio_steam.svg" alt="image:vedio_steam"></a>
 </div>
 
 常见的视频文件，如.mp4是一类容器，其包含了视频流(HEVC编码)和音频流(ACC编码)数据。
