@@ -17,37 +17,33 @@
     <a href=""><img src="https://img.shields.io/github/repo-size/Puiching-Memory/pylibde265" alt="count:size"></a>
   </div>
 
-  [中文](https://github.com/Puiching-Memory/pylibde265/blob/main/README_zh.md) | [English](https://github.com/Puiching-Memory/pylibde265/blob/main/README.md)
+  [中文](README_zh.md) | [English](README.md)
 
 </div>
 
 # pylibde265
 
-Decode HEVC(H.265) video in python
+Decode HEVC(H.265) video in python.
 
-在python中解码HEVC(H.265)视频
+### Warning! This repository is still in early release, the code is subject to frequent disruptive changes, and we cannot guarantee compatibility with the current version.
 
-### Warning! This repository is still in early release, the code is subject to frequent disruptive changes, and we cannot guarantee compatibility with the current version
-
-### 警告！此存储库仍处于早期版本，代码会经常有破坏性更改，我们无法保证目前版本的兼容性
-
-# 概念
+# Concept
 
 <div>
   <a href=""><img src="./multimedia/image/vedio_steam.svg" alt="image:vedio_steam"></a>
 </div>
 
-常见的视频文件，如.mp4是一类容器，其包含了视频流(HEVC编码)和音频流(ACC编码)数据。
+Common video files, such as .mp4, are containers that include video streams (HEVC encoded) and audio streams (AAC encoded).
 
-libde265负责将HEVC编码的视频流解码至原始比特流，此类文件通常以.265或.hevc作为后缀名。
+libde265 is responsible for decoding the HEVC encoded video stream into raw bitstreams. Such files usually have .265 or .hevc extensions.
 
-目前版本中，不支持直接解码.mp4文件，你需要手动分离视频文件的视频部分。
+In the current version, direct decoding of .mp4 files is not supported; you need to manually extract the video part of the file.
 
-要想从MP4中提取h265流，你可以使用：ffmpeg,gpac(mp4box),Bento4
+To extract h265 streams from MP4, you can use: ffmpeg, gpac(mp4box), Bento4.
 
-~~但是你都使用了这些框架了，那其实解码h265他们也能做~~
+~~But if you use these frameworks, they can actually decode h265 too~~
 
-# 快速开始
+# Quick Start
 
 ```bash
 pip install pylibde265
@@ -58,17 +54,17 @@ import pylibde265.de265
 import matplotlib.pyplot as plt
 import os
 
-# 初始化解码器 (指定线程数)
+# Initialize decoder (specify number of threads)
 dec = pylibde265.de265.decoder(threads=os.cpu_count() or 1)
 
-# 流式加载并解码 HEVC (.265/.hevc) 文件
+# Stream load and decode HEVC (.265/.hevc) file
 for img in dec.load_file("your_video.h265"):
     print(f"Frame PTS: {img.pts}, {img.width()}x{img.height()}")
     
-    # 获取原始 YUV 分量 (numpy 视图，无拷贝)
+    # Get raw YUV components (numpy view, no copy)
     # y, cb, cr = img.yuv()
     
-    # 转换为 RGB (C++ 层加速，支持 420/422/444 和 8-12bit)
+    # Convert to RGB (C++ accelerated, supports 420/422/444 and 8-12bit)
     rgb = img.to_rgb()
     
     plt.imshow(rgb)
@@ -78,9 +74,9 @@ for img in dec.load_file("your_video.h265"):
 
 ![example_preview.png](./multimedia/image/example.png)
 
-## 高级用法：内存流处理
+## Advanced Usage: Memory Stream Processing
 
-如果你正在处理来自网络或内存的流数据：
+If you are processing stream data from network or memory:
 
 ```python
 dec = pylibde265.de265.decoder()
@@ -91,74 +87,86 @@ with open("stream.h265", "rb") as f:
         
         dec.push_data(chunk)
         for img in dec.decode():
-             # 处理图像
+             # Process image
              process(img.to_rgb())
 ```
 
-# 性能
+# More Examples
 
-* **高性能 C++ 核心**：所有的像素处理和颜色转换 (YUV to RGB) 已完全迁移至 C++ 层，利用 `pybind11` 实现零拷贝数据交换。
-* **多线程支持**：充分利用 libde265 的多线程解码能力，在多核处理器上表现优异。
-* **性能基准 (720p H.265)**：
-    * **解码速度**: > 100 FPS (单帧耗时 ~8ms)。
-    * **颜色转换**: ~6ms (C++ 加速，支持 4:2:0/4:2:2/4:4:4)。
-    * **综合吞吐量**: 在 4 线程下可稳定达到 30+ FPS 的实时播放速率。
+This project provides detailed example codes located in the `example/` directory, covering aspects from basic decoding to visualization:
 
-具体性能数据 (基于 `test/bench_performance.py`):
+*   **[01_basic_decoding.py](example/01_basic_decoding.py)**: Basic file decoding introduction.
+*   **[02_stream_decoding.py](example/02_stream_decoding.py)**: Memory/Network stream data processing.
+*   **[03_metadata_config.py](example/03_metadata_config.py)**: Access metadata like PTS, resolution, NAL Headers, and parameter configuration.
+*   **[04_image_processing.py](example/04_image_processing.py)**: Save frames as images, access raw YUV data.
+*   **[05_visualization.py](example/05_visualization.py)**: Visualization of H.265 coding structures (Coding Blocks, Motion Vectors, etc.).
 
-| 线程数 | 解码 (ms) | RGB 转换 (ms) | 综合 FPS |
+For detailed instructions, please refer to [example/README.md](example/README.md).
+
+# Performance
+
+* **High Performance C++ Core**: All pixel processing and color conversion (YUV to RGB) has been fully migrated to the C++ layer, using `pybind11` for zero-copy data exchange.
+* **Multi-threading Support**: Fully utilizes libde265's multi-threaded decoding capabilities, performing excellently on multi-core processors.
+* **Performance Benchmarks (720p H.265)**:
+    * **Decoding Speed**: > 100 FPS (single frame ~8ms).
+    * **Color Conversion**: ~6ms (C++ accelerated, supports 4:2:0/4:2:2/4:4:4).
+    * **Total Throughput**: Can stably reach 30+ FPS real-time playback rate under 4 threads.
+
+Specific performance data (based on `test/bench_performance.py`):
+
+| Threads | Decode (ms) | RGB Conversion (ms) | Total FPS |
 | :----- | :-------- | :------------ | :------- |
 | 1      | 73.18     | 6.20          | 12.6     |
 | 4      | 27.64     | 5.72          | 30.0     |
 | 16     | 22.19     | 5.79          | 35.7     |
 
-# 从源代码构建
+# Build from Source
 
-## 环境要求
-- C++11 兼容编译器 (Windows: VS 2022 / GCC / Clang)
+## Requirements
+- C++11 compatible compiler (Windows: VS 2022 / GCC / Clang)
 - CMake 3.15+
 - Python 3.9+
 
-## 使用 uv (推荐)
+## Use uv (Recommended)
 
-1. 克隆存储库：`git clone https://github.com/Puiching-Memory/pylibde265.git`
-2. 安装依赖并自动构建：
+1. Clone repository: `git clone https://github.com/Puiching-Memory/pylibde265.git`
+2. Install dependencies and build automatically:
 
 ```bash
-# 创建并激活环境
+# Create and activate environment
 uv venv
 .venv\Scripts\activate
 
-# 直接以开发模式安装 (会自动调用 CMake 编译 C++ 模块)
+# Install in editable mode (internally calls CMake to build C++ modules)
 uv pip install -e .
 ```
 
-项目采用 `scikit-build-core` 构建系统，会自动处理子模块 `libde265` 的编译与链接，无需手动进入子目录构建。
+The project uses `scikit-build-core` build system, automatically handling the compilation and linking of submodule `libde265`, without manually entering subdirectories to build.
 
-# 路线图
+# Roadmap
 
-* [x] **高性能 C++ 颜色转换**：支持多种采样格式和位深。
-* [x] **流式数据加载**：支持 `push_data` 实时解码。
-* [ ] **解复用器 (Demuxer)**：支持直接读取 .mp4 容器。
-* [ ] **硬件加速解码**：集成 DXVA2/D3D11VA。
+* [x] **High Performance C++ Color Conversion**: Support various sampling formats and bit depths.
+* [x] **Stream Data Loading**: Support `push_data` real-time decoding.
+* [ ] **Demuxer**: Support direct reading of .mp4 containers.
+* [ ] **Hardware Acceleration**: Integrate DXVA2/D3D11VA.
 
 
-# 致谢
+# Acknowledgements
 
-作者:
+Author:
 
-* @梦归云帆
+* @梦归云帆 (MengGuiYunFan)
 
-参考:
+References:
 
-* [libde265](https://github.com/strukturag/libde265)--C/C++仓库:作者[@strukturag](https://github.com/strukturag)
-* [pyde265](https://github.com/kloppjp/pyde265)--提供linux系统的py绑定:作者[@kloppjp](https://github.com/kloppjp)
+* [libde265](https://github.com/strukturag/libde265)--C/C++ repo: Author [@strukturag](https://github.com/strukturag)
+* [pyde265](https://github.com/kloppjp/pyde265)--Provided py bindings for linux: Author [@kloppjp](https://github.com/kloppjp)
 
-统计数据标签:
+Stats Badges:
 
 * https://dev.to/envoy_/150-badges-for-github-pnk
 * https://shields.io/
 
-数据分析:
+Data Analysis:
 
 * https://pypistats.org/packages/pylibde265
