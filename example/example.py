@@ -5,7 +5,6 @@ to run this example, you need install pylibde265 and matplotlib
 import pylibde265.de265
 import matplotlib.pyplot as plt
 import os
-import numpy as np
 
 print(f"libde265 version: {pylibde265.de265.get_version()}")
 print(f"pylibde265 version: {pylibde265.__version__}")

@@ -35,7 +35,7 @@ dev = [
 cmake.version = ">=3.15"
 build.verbose = true
 wheel.packages = ["src/pylibde265"]
-sdist.include = ["src/pylibde265", "libde265"]
+sdist.include = ["src/pylibde265", "libde265", "test", "example", "README.md", "LICENSE"]
 
 [tool.cibuildwheel]
 build = "cp39-* cp310-* cp311-* cp312-* cp313-* cp314-*"
