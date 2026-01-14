@@ -8,7 +8,6 @@
     <a href=""><img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="windows:support"></a>
     <a href=""><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="linux:support"></a>
     <a href=""><img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macos:support"></a>
-    <a href=""><img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="android:support"></a>
     <br>
     <a href=""><img src="https://img.shields.io/github/downloads/Puiching-Memory/pylibde265/total" alt="downloads:all"></a>
     <a href=""><img src="https://img.shields.io/github/downloads/Puiching-Memory/pylibde265/latest/total" alt="downloads:latest_verson"></a>
@@ -79,22 +78,6 @@ for img in dec.load_file("your_video.h265"):
 
 ![example_preview.png](./multimedia/image/example.png)
 
-## 核心 API 介绍
-
-### `pylibde265.de265.decoder`
-解码器核心类。
-- `load_file(path)`: 生成器函数，逐帧读取并解码文件。
-- `push_data(data)`: 向解码器压入二进制流数据。
-- `decode()`: 执行解码过程并返回生成的图像生成器。
-
-### `pylibde265.de265.Image`
-解码后的图像对象。
-- `width()`, `height()`: 图像尺寸。
-- `pts`: 演示时间戳。
-- `chroma_format`: 颜色格式 (4:2:0, 4:2:2, 4:4:4 等)。
-- `yuv()`: 返回 `(Y, Cb, Cr)` 的 numpy 数组元组。
-- `to_rgb()`: 高性能转换为 RGB 格式 (numpy 数组)。
-
 ## 高级用法：内存流处理
 
 如果你正在处理来自网络或内存的流数据：
@@ -148,12 +131,6 @@ uv venv
 
 # 直接以开发模式安装 (会自动调用 CMake 编译 C++ 模块)
 uv pip install -e .
-```
-
-## 使用标准 pip
-
-```bash
-pip install .
 ```
 
 项目采用 `scikit-build-core` 构建系统，会自动处理子模块 `libde265` 的编译与链接，无需手动进入子目录构建。
