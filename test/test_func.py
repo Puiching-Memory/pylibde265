@@ -30,8 +30,3 @@ def test_decode_loop():
     
     print(f"Decoded {count} frames")
 
-if __name__ == "__main__":
-    test_version()
-    test_decoder_creation()
-    test_decode_loop()
-

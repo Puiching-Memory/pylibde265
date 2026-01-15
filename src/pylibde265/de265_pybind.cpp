@@ -2,9 +2,11 @@
 #include <pybind11/numpy.h>
 #include <pybind11/stl.h>
 #include "de265.h"
+#include "demuxer.h"
 #include <vector>
 #include <memory>
 #include <algorithm>
+#include <string>
 
 namespace py = pybind11;
 
@@ -266,5 +268,13 @@ PYBIND11_MODULE(_de265, m) {
         .def("set_parameter_bool", &Decoder::set_parameter_bool)
         .def("set_parameter_int", &Decoder::set_parameter_int)
         .def("get_parameter_bool", &Decoder::get_parameter_bool);
+
+    py::class_<FileDemuxer>(m, "FileDemuxer")
+        .def(py::init<const std::string&>())
+        .def("get_headers", &FileDemuxer::get_headers)
+        .def("get_fps", &FileDemuxer::get_fps)
+        .def("__len__", &FileDemuxer::total_samples)
+        .def("__iter__", &FileDemuxer::iter)
+        .def("__next__", &FileDemuxer::next);
 }
 

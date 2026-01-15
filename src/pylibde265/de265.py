@@ -6,7 +6,8 @@ from ._de265 import (  # type: ignore
     set_verbosity,
     de265_error as Error,
     de265_chroma as ChromaFormat,
-    de265_param as Parameter
+    de265_param as Parameter,
+    FileDemuxer
 )
 
 class Image:

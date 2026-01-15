@@ -67,6 +67,3 @@ def test_visualize_all():
     # assert np.any(dst > 0) # Might be empty if only one tile
     
     print("All visualization functions tested successfully (some outputs were empty as expected for this frame)")
-
-if __name__ == "__main__":
-    test_visualize_all()

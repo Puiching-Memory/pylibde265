@@ -22,8 +22,15 @@ This directory contains examples demonstrating how to use the `pylibde265` libra
     *   Saving frames to disk using Pillow (PIL).
 
 5.  **[05_visualization.py](05_visualization.py)**
-    *   Using the `visualize` module to inspect internal H.265 coding structures.
-    *   Visualizing Coding Blocks (CB), Prediction Blocks (PB), Transforms (TB), Motion Vectors, etc.
+    *   Visualizing decoded frames using `matplotlib` (requires `pip install matplotlib`).
+
+6.  **[06_mp4_decoding.py](06_mp4_decoding.py)**
+    *   Directly decoding H.265 streams from MP4/MOV files using `FileDemuxer`.
+
+7.  **[07_visual_player.py](07_visual_player.py)**
+    *   Interactive visual player using OpenCV.
+    *   Real-time playback speed control based on extracted video FPS.
+    *   Progress bar display using `tqdm`.
 
 ## Prerequisites
 

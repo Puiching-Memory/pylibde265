@@ -35,13 +35,9 @@ Decode HEVC(H.265) video in python.
 
 Common video files, such as .mp4, are containers that include video streams (HEVC encoded) and audio streams (AAC encoded).
 
-libde265 is responsible for decoding the HEVC encoded video stream into raw bitstreams. Such files usually have .265 or .hevc extensions.
+libde265 is responsible for decoding the HEVC encoded video stream into raw bitstreams.
 
-In the current version, direct decoding of .mp4 files is not supported; you need to manually extract the video part of the file.
-
-To extract h265 streams from MP4, you can use: ffmpeg, gpac(mp4box), Bento4.
-
-~~But if you use these frameworks, they can actually decode h265 too~~
+Starting from v0.1.0, pylibde265 includes a lightweight MP4 demuxer that supports decoding HEVC video streams directly from .mp4/.mov files.
 
 # Quick Start
 
@@ -91,6 +87,28 @@ with open("stream.h265", "rb") as f:
              process(img.to_rgb())
 ```
 
+## Direct MP4 Decoding
+
+```python
+import pylibde265
+
+demuxer = pylibde265.FileDemuxer("video.mp4")
+decoder = pylibde265.decoder()
+
+# Get video info
+print(f"FPS: {demuxer.get_fps()}, Total frames: {len(demuxer)}")
+
+# Initialize with headers (VPS/SPS/PPS)
+decoder.push_data(demuxer.get_headers())
+
+# Iterate through packets
+for frame_data in demuxer:
+    decoder.push_data(frame_data)
+    for img in decoder.decode():
+        # Process image (e.g., convert to RGB)
+        rgb = img.to_rgb()
+```
+
 # More Examples
 
 This project provides detailed example codes located in the `example/` directory, covering aspects from basic decoding to visualization:
@@ -100,6 +118,8 @@ This project provides detailed example codes located in the `example/` directory
 *   **[03_metadata_config.py](example/03_metadata_config.py)**: Access metadata like PTS, resolution, NAL Headers, and parameter configuration.
 *   **[04_image_processing.py](example/04_image_processing.py)**: Save frames as images, access raw YUV data.
 *   **[05_visualization.py](example/05_visualization.py)**: Visualization of H.265 coding structures (Coding Blocks, Motion Vectors, etc.).
+*   **[06_mp4_decoding.py](example/06_mp4_decoding.py)**: Direct MP4 file decoding example.
+*   **[07_visual_player.py](example/07_visual_player.py)**: Visual player with a progress bar and FPS-synced playback using OpenCV and tqdm.
 
 For detailed instructions, please refer to [example/README.md](example/README.md).
 
@@ -138,16 +158,22 @@ uv venv
 .venv\Scripts\activate
 
 # Install in editable mode (internally calls CMake to build C++ modules)
-uv pip install -e .
+uv pip install -e .[dev]
 ```
 
-The project uses `scikit-build-core` build system, automatically handling the compilation and linking of submodule `libde265`, without manually entering subdirectories to build.
+## Running Tests
+
+Standardized tests are provided using `pytest`:
+
+```bash
+pytest test/
+```
 
 # Roadmap
 
 * [x] **High Performance C++ Color Conversion**: Support various sampling formats and bit depths.
 * [x] **Stream Data Loading**: Support `push_data` real-time decoding.
-* [ ] **Demuxer**: Support direct reading of .mp4 containers.
+* [x] **Demuxer**: Built-in lightweight demuxer supporting standard and Fragmented MP4 (fMP4).
 * [ ] **Hardware Acceleration**: Integrate DXVA2/D3D11VA.
 
 
