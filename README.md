@@ -186,6 +186,7 @@ Author:
 References:
 
 * [libde265](https://github.com/strukturag/libde265)--C/C++ repo: Author [@strukturag](https://github.com/strukturag)
+* [minimp4](https://github.com/lieff/minimp4)--The demuxer kernel in this project: Author [@lieff](https://github.com/lieff)
 * [pyde265](https://github.com/kloppjp/pyde265)--Provided py bindings for linux: Author [@kloppjp](https://github.com/kloppjp)
 
 Stats Badges:

@@ -186,6 +186,7 @@ pytest test/
 参考:
 
 * [libde265](https://github.com/strukturag/libde265)--C/C++仓库:作者[@strukturag](https://github.com/strukturag)
+* [minimp4](https://github.com/lieff/minimp4)--本项目中解复用器内核:作者[@lieff](https://github.com/lieff)
 * [pyde265](https://github.com/kloppjp/pyde265)--提供linux系统的py绑定:作者[@kloppjp](https://github.com/kloppjp)
 
 统计数据标签:

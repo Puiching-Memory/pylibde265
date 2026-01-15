@@ -4,7 +4,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "pylibde265"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name="梦归云帆", email="1138663075@qq.com" },
 ]
